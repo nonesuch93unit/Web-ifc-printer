@@ -5,6 +5,7 @@ Requiring the browsers supported WebGL.
 
 
 Divide the work:
+
 1. Load the document ifc.
 
 2. use WebGL to print the model.
