@@ -5,7 +5,7 @@
   <title>WebGL 3D model viewer using three.js</title>
   <script src="include/three.js"></script>
   <script src="include/OrbitControls.js"></script>
-  <script src="include/Detector.js"></script>
+    <script src="include/Detector.js"></script>
   <script src="include/dat.gui.js"></script>
   
 </head>
@@ -115,9 +115,9 @@
 	  // Controls
 	  controls = new THREE.OrbitControls( camera, renderer.domElement );
 	  //controls.addEventListener( 'change', render ); // add this only if there is no animation loop (requestAnimationFrame)
-	  //controls.enableDamping = true;
-	  //controls.dampingFactor = 0.25;
-	  //controls.enableZoom = false;
+	  controls.enableDamping = true;
+	  controls.dampingFactor = 0.25;
+	  controls.enableZoom = false;
 	  
 	}
 	  
