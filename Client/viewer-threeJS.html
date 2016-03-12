@@ -34,7 +34,7 @@
 	  camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
 	  camera.position.z = 50;
 
-	  /*
+	  
 	  // Controls
 	  controls = new THREE.TrackballControls( camera );
 	  controls.rotateSpeed = 5.0;
@@ -44,7 +44,7 @@
 	  controls.noPan = false;
 	  controls.staticMoving = true;
 	  controls.dynamicDampingFactor = 0.3;
-	  */
+	  
 
 	  // New scene
 	  scene = new THREE.Scene();
@@ -70,18 +70,11 @@
 	  // load a resource
 	  loader.load('data/monster.js',
 	    // Function when resource is loaded
-	    function ( geometry, material) {
-		  var material = new THREE.MultiMaterial( materials );
-		  var object = new THREE.Mesh( geometry, material );
-
-		// My initial model was too small, so I scaled it upwards.
-		object.scale = new THREE.Vector3( 2, 2, 2 );
-
-		// You can change the position of the object, so that it is not
-		// centered in the view and leaves some space for overlay text.
-		scene.add( object );
-		
-	  });
+	    function (geometry, materials) {
+	        //var material = new THREE.MultiMaterial(materials);
+	        var object = new THREE.Mesh(geometry);
+	        scene.add(object);
+	    });
 	  
 	/*====================================================*/
 
@@ -98,18 +91,6 @@
 	  // This function calls itself on every frame. You can for example change
 	  // the objects rotation on every call to create a turntable animation.
 	  requestAnimationFrame( animate );
-<<<<<<< HEAD
-		
-	  theta += 2;
-	  var radius = 20;
-
-				camera.position.x = radius * Math.sin( THREE.Math.degToRad( theta ) );
-				camera.position.y = 0;
-				camera.position.z = radius * Math.cos( THREE.Math.degToRad( theta ) );
-				camera.lookAt( scene.position );
-=======
-
->>>>>>> origin/master
 	  
 	  // On every frame we need to calculate the new camera position
 	  // and have it look exactly at the center of our scene.
