@@ -1,4 +1,4 @@
-mtllib ../1.ifc.mtl
+mtllib 1.ifc.mtl
 g 5
 s 1
 usemtl IfcWindow
