@@ -1,8 +1,8 @@
 //------------------------------------------------
 //WebSvr.js
-//  an example of building a web server
+//
 //------------------------------------------------
-
+//this is the first part, it's for building a web server
 //a message to show the states of the server
 console.time('[WebSvr][Start]');
 
@@ -13,7 +13,7 @@ var libFs = require("fs");    //file system module
 var libPath = require("path");    //path analysing module
 
 
-//get the type of requiring file for the head of http
+//get the type of request file for the head of http
 var funGetContentType=function(filePath){
     var contentType="";
 
@@ -122,16 +122,16 @@ webSvr.listen(8124,function(){
 });
 
 
-//this part is sending and receiving messages
+//this is the second part, it's for getting request of client, deal with files and send.
 var io = require('socket.io').listen(webSvr);
 var exec = require('child_process').exec;
-var errorCode;
-var ifcData;
+var threeOBJ = require("three-obj")();
 var objOrigin;
 var objData;
 var mtlData;
-var numofobj;
-var files = [];
+var pathifc;
+var pathobjs;
+var pathjson;
 
 // get and send message with client
 io.sockets.on('connection', function(socket){
@@ -144,15 +144,19 @@ io.sockets.on('connection', function(socket){
     socket.on('client_data', function(data){
 		console.log("[client required]" + data.letter + '.ifc.obj');
         
+		pathifc = 'WebRoot/files/';
+		pathobjs = 'WebRoot/files/' + data.letter + '/';
+		pathjson = 'WebRoot/Jsons/' + data.letter + '/';
 		ReadFileAndSendData(socket,data.letter);
 		
     });
 });
 
+// get a file name and send to client, don't need to use now.
 var SendData = function(file, socket){
 	libFs.readFile(file, 'utf8', function (err,data) {
 		if (err) {
-			socket.emit('server_data', {'data': errorCode})
+			socket.emit('server_data', {'data': 0})
 			return (err);
 		}
 		socket.emit('server_data', {'data': data});
@@ -161,38 +165,41 @@ var SendData = function(file, socket){
 }
 
 //get the require and send the file to the client
-var ReadFileAndSendData = function(socket,file){
-	FindIFCAndCreateOBJ(file);
+var ReadFileAndSendData = function(socket,letter){
+	FindIFCAndCreateOBJ(letter);
 
+	//don't need to send objs now
+	/*
     SendData('WebRoot/files/'+file+'.ifc.obj', socket);
 	for(var i = 0; i<files.length;i++){
 		SendData('WebRoot/files/'+ file +'/'+files[i], socket);
-	}
+	}*/
+	socket.emit('server_data', {'data': 'successful'});
 }
 
 //judge if a file exists. Transform a ifc file to obj file.
-var FindIFCAndCreateOBJ = function(file){
-	libFs.stat('WebRoot/files/'+file+'.ifc', function(err, stat) {
+var FindIFCAndCreateOBJ = function(letter){
+	libFs.stat(pathifc+letter+'.ifc', function(err, stat) {
 		if(err == null) {
-			libFs.stat('WebRoot/files/'+file+'.ifc.obj', function(err, stat){
+			libFs.stat(pathifc+letter+'.ifc.obj', function(err, stat){
 				if(err == null){
 						console.log("[createOBJ] this obj exists!");
-						ReadFiles(file);
+						ReadFiles(letter);
 				}else{				
 					//send this document!
 					console.log("[createOBJ] this obj doesn't exists!");
 					console.log("[createOBJ] creating obj...");
-					var cmd = 'IfcObj.exe WebRoot/files/' + file +'.ifc';
+					var cmd = 'IfcObj.exe '+ pathifc + letter +'.ifc';
 					exec(cmd, function(error, stdout, stderr) {
 						console.log("[createOBJ] transformed ifc to obj!");
-						ReadFiles(file);
+						ReadFiles(letter);
 					})
-					errorCode = 2;				
+								
 				}
 			})
 		} else if(err.code == 'ENOENT') {
 			console.log("[createOBJ] this ifc doesn't exist!");
-			errorCode = 1;
+			
 		} else {
 			console.log('errors：' + err);
 		}
@@ -200,19 +207,20 @@ var FindIFCAndCreateOBJ = function(file){
 }
 
 //read the ifc and obj file then use DevideObj function, you have to use FindIFCAndCreateOBJ to make sure ifc and obj exist
-var ReadFiles = function(file){
-	libFs.readFile('WebRoot/files/'+file+'.ifc.obj', 'utf8', function (err,data) {
+var ReadFiles = function(letter){
+	libFs.readFile(pathifc+letter+'.ifc.obj', 'utf8', function (err,data) {
 		if (err) {
 			return (err);
 		}
 		objOrigin = data;
-		libFs.readFile('WebRoot/files/'+file+'.ifc.mtl', 'utf8', function (err,data) {
+		libFs.readFile(pathifc+letter+'.ifc.mtl', 'utf8', function (err,data) {
 			if (err) {
 				return (err);
 			}
 			mtlData = data;
 			
-			DevideObj(file);
+			DevideObj(letter);
+			
 		});
     });
 	
@@ -220,19 +228,19 @@ var ReadFiles = function(file){
 }
 
 //get the file name and divide into smaller objs
-var DevideObj = function(file){
+var DevideObj = function(letter){
 	//console.log(mtlData);
 	//console.log("::::::::::::::::" + npart);
+	var ObjDiffParts = [];
 	var patt = /newmtl .+/g;
 	var parts = mtlData.match(patt);
 	var npart = parts.length;
 	console.log("[obj split]there are " + npart + "objs");
 	var tempstr = (objOrigin + 'g').replace(/\ng /g, "\ng g ");
-	var path = 'WebRoot/files/'+ file+'/';
 	
-
-	if (!libFs.existsSync(path)) {
-		libFs.mkdirSync(path);
+	
+	if (!libFs.existsSync(pathobjs)) {
+		libFs.mkdirSync(pathobjs);
 	}
 		
 	//console.log(tempstr);
@@ -244,9 +252,10 @@ var DevideObj = function(file){
 		var nsubpart = subparts.length;
 		//console.log("::::::::" + nsubpart);
 		
-		var filename = file +parts[i]+'.obj';
-		files.push(filename);
-		objData = "mtllib ../"+ file +".ifc.mtl\n";
+		var filename = letter +parts[i]+'.obj';
+		var filenameMtl = letter +parts[i]+'.mtl';
+		ObjDiffParts.push(filename);
+		objData = "mtllib "+ letter +".ifc.mtl\n";
 		for(var j = 0; j < nsubpart; j++){
 			objData += "g " + (i+1) + "\ns 1\n";
 			objData += subparts[j].substr(0,subparts[j].length-1);
@@ -254,13 +263,34 @@ var DevideObj = function(file){
 		
 		console.log("success create");
 		
-		libFs.open(path + filename,"a",0644,function(e,fd){
+		libFs.open(pathobjs + filename,"a",0644,function(e,fd){
 			if(e) return e;
 		});
-		libFs.writeFile(path + filename,objData,function(e){
+		libFs.writeFile(pathobjs + filename,objData,function(e){
+			if(e) return e;
+		})
+		
+		libFs.open(pathobjs + filenameMtl,"a",0644,function(e,fd){
+			if(e) return e;
+		});
+		libFs.writeFile(pathobjs + filenameMtl,mtlData,function(e){
 			if(e) return e;
 		})
 		
 		console.log("success ecrite");
 	}
+	objToJson(letter,ObjDiffParts);
 }
+
+//transform obj to json
+var objToJson = function(letter,ObjDiffParts){
+	
+	if (!libFs.existsSync(pathjson)) {
+		libFs.mkdirSync(pathjson);
+	}
+	for(var i = 0; i<ObjDiffParts.length;i++){
+		threeOBJ.convert( pathobjs+ObjDiffParts[i], pathjson+ObjDiffParts[i]+'.json');
+	}
+	console.log("[transform to json] successful to transform!");
+}
+

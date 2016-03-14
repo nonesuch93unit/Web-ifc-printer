@@ -1,25 +1,4 @@
-//stockage part
-/*
-var Point3D = function(x,y,z) {
-	this.x = x;
-	this.y = y;
-	this.z = z;
-}
-
-var ifcData = function() {
-    this.Points = [];
-    this.getNumPoints = function () {
-        return this.Points.length;
-    };
-	this.getDatasFromString = function(data){
-		return (this.Points.length);
-	}
-}
-//var IfcDatas = new ifcData();
-*/
 var socket = io.connect('http://127.0.0.1:8124');
-var OBJData;
-var MTLData;
 
 //function to send requests
 var sendRequest = function(request){
