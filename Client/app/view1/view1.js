@@ -61,12 +61,6 @@ angular.module('myApp.view1', ['ngRoute'])
 
           var reader = new FileReader();
 
-          //reader.onerror = errorHandler;
-          //reader.onprogress = updateProgress;
-          //reader.onabort =
-          //reader.onloadstart =
-          //reader.onload =
-
           reader.readAsBinaryString(file);
 
           reader.onload = function (event) {
@@ -92,6 +86,15 @@ angular.module('myApp.view1', ['ngRoute'])
             mat = mtlLoader.parse(event.target.result);
             mat.preload();
             console.log(mat)
+          };
+
+
+        }
+        else if (splits[splits.length - 1] == 'ifc') {
+          var reader = new FileReader();
+          reader.readAsBinaryString(file);
+          reader.onload = function (event) {
+              mySocket.emit('client_data', event.target.result);
           };
 
 
