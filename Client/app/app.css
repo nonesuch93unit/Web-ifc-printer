@@ -1,0 +1,135 @@
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+.dropzone {
+  border: 2px solid #000000;
+  padding: 10px;
+  margin-left:25px;
+  margin-right:25px;
+  margin-top:25px;
+  margin-bottom:25px;
+  position:absolute;
+  bottom:0;
+  right:0;
+  background-color: #efa300;
+  border-radius: 5px;
+}
+
+.gldiv {
+  margin: 0 auto;
+  //padding: 17.5px;
+  //margin-top: 37px;
+  z-index: 99999999;
+}
+
+
+body{
+  background-color: #f8f8f8;
+}
+
+
+
+.menuBardemoBasicUsage .page-container {
+  padding: 32px;
+}
+.menuBardemoBasicUsage .page {
+  margin: 0 auto;
+  padding: 24px;
+  max-width: 680px;
+  box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.25); }
+.menuBardemoBasicUsage .page h1 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-top: 0;
+  font-weight: normal; }
+.menuBardemoBasicUsage .page p {
+  line-height: 1.6rem; }
+
+
+.menuRight{
+  float:right;
+
+}
+
+
+
+/* File Browser LIST sortable */
+#sortable {
+  float:right;
+  width: 100%;
+  height: 200px;
+  border: 1px solid gray;
+  background-color: #dddddd;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  font-family: Georgia, Times, serif;
+  font-size: 12px;
+  overflow: auto;
+  padding-left: 0px;
+}
+
+#sortable ul {
+  list-style: none;
+}
+
+#sortable ul li a {
+  display: block;
+  text-decoration: none;
+  color: #000000;
+  background-color: #FFFFFF;
+  //line-height: 15px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #CCCCCC;
+  box-shadow: 2px 4px 11px -2px #BFBFBF;
+  -webkit-box-shadow: 2px 4px 11px -2px #BFBFBF;
+  -moz-box-shadow: 2px 4px 11px -2px #BFBFBF;
+  -o-box-shadow: 2px 4px 11px -2px #BFBFBF;
+  cursor: hand;
+}
+ul{
+  padding-left: 0px;
+  -webkit-padding-start: 0px;
+}
+#sortable ul li a:hover {
+  color: #FFFFFF;
+  background-image: url("../images/hover.png");
+  background-repeat: repeat-x;
+  cursor: pointer;
+}
+
+#sortable ul li a strong {
+  margin-right: 10px;
+}
+#sortable ul li{
+  margin-top: -10px;
+}

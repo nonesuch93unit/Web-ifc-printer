@@ -1,0 +1,27 @@
+<div header></div>
+<div class="dropzone">
+    <br>
+    <div id="dropzone">Drop .json file here...</div>
+    <br>
+</div>
+
+<input type="button" name="hello" value="loadMTL" ng-href='#here' ng-click='goMTL()'/>
+<input type="button" name="hello" value="loadOBJ" ng-href='#here' ng-click='go()'/>
+<input type="button" name="hello" value="GetFile" ng-href='#here' ng-click='getIFC()'/>
+<input value="{{filepath}}"/>
+
+
+<div id="sortable" ng-style="menuRightStyle">
+    <ul id="list_sortable" ng-repeat="layer in layers">
+        <li><a id ="layer-{{layer.name}}"><span class='glyphicon glyphicon-eye-open push-left'></span><strong> - file : </strong>{{layer.name}}</a></li>
+    </ul>
+</div>
+
+
+<pre id="data"></pre>
+<!--div id="GLDiv" style="width:1160px; background:#0B0B3B"/-->
+<div class="gldiv" id="GLDiv" />
+
+<div class="menuRight" ng-style="menuRightStyle" ng-repeat="layer in layers">
+<!--<li><a id ="layer-{{layer.name}}"><span class='glyphicon glyphicon-eye-open push-left'></span><strong> -  Brain Volume_ID: </strong>{{layer.name}}</a></li>-->
+</div>
