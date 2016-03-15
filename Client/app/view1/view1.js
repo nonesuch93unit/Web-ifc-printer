@@ -14,8 +14,9 @@ angular.module('myApp.view1', ['ngRoute'])
       //envoie de donnée au serveur
       var sendRequest = function(request){
         mySocket.emit('client_data', {'letter': request});
+        console.log("sendRequest("+request+")");
       };
-      
+
       var mat; //material
       //taille du viewer threejs
       var headerSize = 37;
@@ -424,7 +425,13 @@ $scope.layers = [];
 
       $scope.SplitFileAndGetList = function(fp) {
         sendRequest(fp);
-        console.log(fp);
+        sendRequest(fp);
+        sendRequest(fp);
+        sendRequest(fp);
+        sendRequest(fp);
+        sendRequest(fp);
+        sendRequest(fp);
+        console.log("hello : "+fp);
         mySocket.on("server_data", function(data){
           var OBJData = data.data;
           if(data.data === 0){

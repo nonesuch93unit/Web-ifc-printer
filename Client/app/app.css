@@ -121,9 +121,7 @@ ul{
   -webkit-padding-start: 0px;
 }
 #sortable ul li a:hover {
-  color: #FFFFFF;
-  background-image: url("../images/hover.png");
-  background-repeat: repeat-x;
+  color: #4e6ca9;
   cursor: pointer;
 }
 

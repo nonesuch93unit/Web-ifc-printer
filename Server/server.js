@@ -238,6 +238,7 @@ var ReadFiles = function(letter){
 
 //get the file name and divide into smaller objs
 var DevideObj = function(letter){
+    ObjDiffParts = [];
 	//console.log("::::::::::::::::" + npart);
 	var patt = /newmtl .+/g;
 	var parts = mtlData.match(patt);
