@@ -357,7 +357,6 @@ for (i in array){
             var count = 3;
         }
         if (word[j] === "g"){
-            console.log("i : "+i);
             
            min = updateMin(i, array) - last ;
            last = updateMax(i, array) - min +1;
@@ -389,7 +388,6 @@ first_pass = true;
 function updateMin(line, array1) {
     line++;
     var min1 = 9999999;
-    console.log("line debut: "+line);
     var word1 = array1[line].split(" ");
     while(word1[0] != "g" && array1.length > line+1) {
         for (var j in word1){
@@ -407,8 +405,6 @@ function updateMin(line, array1) {
                 for (k in numbers ){
                     if (min1 > parseInt(numbers[k])){
                         min1 = parseInt(numbers[k]);
-                                                    console.log("line: "+line);
-
                     }
                 }
                 word1[j] = numbers.join(joiner);
@@ -418,14 +414,12 @@ function updateMin(line, array1) {
         line++;
         word1 = array1[line].split(" ");
     }
-    console.log("return min: "+min1);
     return min1;
 } 
 
 function updateMax(line, array1) {
     line++;
     var max1 = 0;
-    console.log("line debut max: "+line);
     var word1 = array1[line].split(" ");
     while(word1[0] != "g" && array1.length > line+1) {
         for (var j in word1){
@@ -443,8 +437,6 @@ function updateMax(line, array1) {
                 for (k in numbers ){
                     if (max1 < parseInt(numbers[k])){
                         max1 = parseInt(numbers[k]);
-                                                    console.log("line max: "+line);
-
                     }
                 }
                 word1[j] = numbers.join(joiner);
@@ -454,7 +446,6 @@ function updateMax(line, array1) {
         line++;
         word1 = array1[line].split(" ");
     }
-    console.log("return max: "+max1);
     return max1;
 } 
 
