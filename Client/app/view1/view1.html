@@ -5,10 +5,10 @@
     <br>
 </div>
 
-<input type="button" name="hello" value="loadMTL" ng-href='#here' ng-click='goMTL()'/>
-<input type="button" name="hello" value="loadOBJ" ng-href='#here' ng-click='go()'/>
-<input type="button" name="hello" value="GetFile" ng-href='#here' ng-click='getIFC()'/>
-<input value="{{filepath}}"/>
+<input type="button" name="hello" value="loadMTL" ng-href='#here' ng-click='goMTL(filepath)'/>
+<input type="button" name="hello" value="loadOBJ" ng-href='#here' ng-click='goOBJ(filepath)'/>
+<input type="button" name="hello" value="GetFile" ng-href='#here' ng-click='SplitFileAndGetList(filepath)'/>
+<input ng-model="filepath"/>
 
 
 <div id="sortable" ng-style="menuRightStyle">

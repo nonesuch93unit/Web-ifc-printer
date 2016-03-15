@@ -15,7 +15,7 @@ angular.module('myApp.view1', ['ngRoute'])
       var sendRequest = function(request){
         mySocket.emit('client_data', {'letter': request});
       };
-
+      
       var mat; //material
       //taille du viewer threejs
       var headerSize = 37;
@@ -96,8 +96,6 @@ angular.module('myApp.view1', ['ngRoute'])
           reader.onload = function (event) {
               mySocket.emit('client_data', event.target.result);
           };
-
-
         }
         else{
 
@@ -415,32 +413,18 @@ angular.module('myApp.view1', ['ngRoute'])
 
 $scope.menuRightStyle = {'background-color': '#bbf242','width':(rightMenuRatio-20)+'px'};
 $scope.layers = [];
-      $scope.go = function() {
-        /*sendRequest("2");
-        mySocket.on("server_data", function(data){
-          var OBJData = data.data;
-          if(data.data === 0){
-            document.getElementById('data').innerHTML = 'this ifc does not exist!!';
-          }else{
-            for (var part in data.parts){
-              var currentList = $scope.layers;
-              var newList = currentList.concat({name:data.parts[part]});
-              $scope.layers = newList;
-          }
-        }});*/
 
-        loadOBJ($scope.filepath,mat);
-
-
-      };
-      $scope.goMTL = function() {
-        readMTL($scope.filepath);
-        console.log(mat);
+      $scope.goOBJ = function(fp) {
+        loadOBJ(fp,mat);
       };
 
-      $scope.getIFC = function() {
-        sendRequest($scope.filepath);
-        console.log("ifc");
+      $scope.goMTL = function(fp) {
+        readMTL(fp);
+      };
+
+      $scope.SplitFileAndGetList = function(fp) {
+        sendRequest(fp);
+        console.log(fp);
         mySocket.on("server_data", function(data){
           var OBJData = data.data;
           if(data.data === 0){
@@ -491,12 +475,11 @@ $scope.layers = [];
 }
 
       function readFromServer(filepath){
+        //NOT WORKING DUE TO INFINITE LOOP
         //first load the mtl
         readMTL(filepath);
-        //console.log(mat);
+
         //then load the obj
         loadOBJ(filepath,mat);
       }
-
-      $scope.filepath = "1/1IfcWall";
     }]);
