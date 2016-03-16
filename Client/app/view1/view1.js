@@ -19,7 +19,7 @@ angular.module('myApp.view1', ['ngRoute'])
 
       var mat; //material
       //taille du viewer threejs
-      var headerSize = 37;
+      var headerSize = 70;
       var rightMenuRatio = 245;
 
       //variable de la scene threejs
@@ -265,35 +265,49 @@ angular.module('myApp.view1', ['ngRoute'])
         };
       }
 
-      function initGL() {
-
+      function initGL(no_scene = true) {
+        //no_scene = no_scene || true;
         var animateWithWebGL = hasWebGL();
 
         var container = document.getElementById("GLDiv");
 
-        _scene = new THREE.Scene();
-        var width = $window.innerWidth -rightMenuRatio;
-        var height = $window.innerHeight - headerSize;
+        if(no_scene == true){
+          _scene = new THREE.Scene();
+          if($window.innerWidth<800){
+            var width = $window.innerWidth - 20;
+          }
+          else{
+            var width = $window.innerWidth - rightMenuRatio;
+          }
+
+
+          var height = $window.innerHeight - headerSize;
+        }
 
         _camera = new THREE.PerspectiveCamera(40, width / height, 0.1, 500);
 
+        //var controls = new THREE.MouseControls(_camera);
+        //controls.movementSpeed = 10;
+        //controls.lookSpeed = 1;
+        //controls.rollSpeed = 0;
+        //controls.autoForward = false;
         _camera.position.x = 0;
         _camera.position.y = 0;
         _camera.position.z = 50;
 
         _scene.add(_camera);
 
-        _trackball = new THREE.TrackballControls(_camera, container);
+        _trackball = new THREE.TinyTrackballControls(_camera, container);
         _trackball.rotateSpeed = 3.5;
         _trackball.zoomSpeed = 2.0;
-        _trackball.panSpeed = 0.5;
+        /*_trackball.panSpeed = 0.5;
         _trackball.noZoom = false;
         _trackball.noPan = false;
         _trackball.staticMoving = true;
         _trackball.dynamicDampingFactor = 0.3;
         _trackball.minDistance = 1;
-        _trackball.maxDistance = 100;
-        _trackball.keys = [82, 90, 80]; // [r:rotate, z:zoom, p:pan]
+        _trackball.maxDistance = 200;
+        _trackball.keys = [82, 90, 80]; // [r:rotate, z:zoom, p:pan]*/
         //_trackball.addEventListener('change', render);
 
         // create lights
@@ -323,7 +337,7 @@ angular.module('myApp.view1', ['ngRoute'])
         _scene.add(light3);
         _scene.add(light4);
 
-        _renderer = new THREE.WebGLRenderer({ alpha: true });  //CanvasRenderer();
+        _renderer = new THREE.WebGLRenderer({ antialiasing: true }/*{ alpha: true }*/);  //CanvasRenderer();
         _renderer.setSize(width, height);
         _renderer.setClearColor( 0x000, 0);
 
@@ -333,7 +347,7 @@ angular.module('myApp.view1', ['ngRoute'])
 
         document.addEventListener('mousewheel', onDocumentMouseWheel, false);
 
-        _renderer.domElement.addEventListener('mousedown', onDocumentMouseDown, false);
+        //_renderer.domElement.addEventListener('mousedown', onDocumentMouseDown, false);
 
         var container = document.getElementById("GLDiv");
       }
@@ -354,7 +368,7 @@ angular.module('myApp.view1', ['ngRoute'])
         render();
       }
 
-      function onDocumentMouseDown(event) {
+      /*function onDocumentMouseDown(event) {
 
         event.preventDefault();
 
@@ -369,10 +383,10 @@ angular.module('myApp.view1', ['ngRoute'])
             _camera.position,
             vector.subSelf(_camera.position).normalize());
 
-        /*var vector = new THREE.Vector3(
+        var vector = new THREE.Vector3(
          ((event.clientX - container.offsetLeft) / _scene.WIDTH) * 2 - 1,
          -((event.clientY - container.offsetTop) / _scene.HEIGHT) * 2 + 1,
-         0.5);*/
+         0.5);
 
         _projector.unprojectVector(vector, _camera);
 
@@ -385,7 +399,7 @@ angular.module('myApp.view1', ['ngRoute'])
           alert("Intersect: " + intersects.length)
 
         }
-      }
+      }*/
 
       function animate() {
         requestAnimationFrame(animate);
@@ -404,10 +418,19 @@ angular.module('myApp.view1', ['ngRoute'])
 
         function onWindowResize(){
 
-        _camera.aspect = ($window.innerWidth  -rightMenuRatio ) / ($window.innerHeight - headerSize);
-        _camera.updateProjectionMatrix();
+        if($window.innerWidth<800){
+          _camera.aspect = ($window.innerWidth  - 20 ) / ($window.innerHeight - headerSize);
+          _camera.updateProjectionMatrix();
 
-        _renderer.setSize( $window.innerWidth  -rightMenuRatio , $window.innerHeight - headerSize);
+          _renderer.setSize( $window.innerWidth  - 20 , $window.innerHeight - headerSize);
+        }
+          else{
+          _camera.aspect = ($window.innerWidth  -rightMenuRatio ) / ($window.innerHeight - headerSize);
+          _camera.updateProjectionMatrix();
+
+          _renderer.setSize( $window.innerWidth  -rightMenuRatio , $window.innerHeight - headerSize);
+        }
+
 
       }
 
@@ -424,12 +447,6 @@ $scope.layers = [];
       };
 
       $scope.SplitFileAndGetList = function(fp) {
-        sendRequest(fp);
-        sendRequest(fp);
-        sendRequest(fp);
-        sendRequest(fp);
-        sendRequest(fp);
-        sendRequest(fp);
         sendRequest(fp);
         console.log("hello : "+fp);
         mySocket.on("server_data", function(data){
@@ -469,14 +486,10 @@ $scope.layers = [];
             var loaderOBJ = new THREE.OBJLoader();
             mtl.preload();
             loaderOBJ.setMaterials(mtl);
-            console.log(mtl);
             var objModel = loaderOBJ.parse(objData.data);
             clearScene();
             objModel.material = mtl.materials;
-            _camera.fov = 40;
-            _camera.position.x = 0;
-            _camera.position.y = 0;
-            _camera.position.z = 30;
+            objModel.name = filepath;
             _scene.add( objModel );
           }});
 }
@@ -489,4 +502,42 @@ $scope.layers = [];
         //then load the obj
         loadOBJ(filepath,mat);
       }
+
+      $scope.cleanTheScene = function(){
+        for( var i = _scene.children.length - 1; i >= 0; i--){
+          var obj = _scene.children[i];
+          //select only the meshes
+          if (obj.type == "Group"){
+            _scene.remove(obj); //and kill it!
+          }
+        }
+        console.log("I've clean it, at your orders Sir!")
+      };
+
+      $scope.deleteObject = function(name){
+        for( var i = _scene.children.length - 1; i >= 0; i--){
+          var obj = _scene.children[i];
+          //select only the good obj
+          console.log(obj.name);
+            if(obj.name===name){
+              _scene.remove(obj); //and kill it!
+            }
+          }
+        animate();
+        console.log("I've clean it, at your orders Sir!")
+      };
+
+      $scope.filepath = "1";
+      $scope.selectFile = function(fp){
+        console.log(fp.match(/[A-Z][a-z]+/g[0]));
+        $scope.filepath = fp.split(/(?=[A-Z])/)[0] + "/" + fp.split('.')[0];
+        $scope.goMTL($scope.filepath);
+      };
+
+
+      $('button').click(function() {
+        $(this).toggleClass('expanded').siblings('div').slideToggle();
+      });
+
+
     }]);

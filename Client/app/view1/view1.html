@@ -1,26 +1,45 @@
-<div header></div>
-<div class="dropzone">
-    <br>
-    <div id="dropzone">Drop .json file here...</div>
-    <br>
-</div>
+<div style="height:15px;"></div>
 
-<input type="button" name="hello" value="loadMTL" ng-href='#here' ng-click='goMTL(filepath)'/>
-<input type="button" name="hello" value="loadOBJ" ng-href='#here' ng-click='goOBJ(filepath)'/>
-<input type="button" name="hello" value="GetFile" ng-href='#here' ng-click='SplitFileAndGetList(filepath)'/>
+<nav class="desktop">
+    <div id="sortable" ng-style="menuRightStyle">
+        <ul id="list_sortable" ng-repeat="layer in layers">
+            <li ng-click="selectFile(layer.name)"><a id ="layer-{{layer.name}}"><span class='glyphicon glyphicon-eye-open push-left'></span><strong> - file : </strong>{{layer.name}}</a></li>
+        </ul>
+        <div class="dropzone">
+            <br>
+            <div id="dropzone">Drop a .ifc file here...</div>
+            <br>
+        </div>
+    </div>
+
+</nav>
+
+<nav class="mobile">
+    <button>Toggle</button>
+    <div id="sortable" ng-style="menuRightStyle">
+        <ul id="list_sortable" ng-repeat="layer in layers">
+            <li ng-click="selectFile(layer.name)"><a id ="layer-{{layer.name}}"><span class='glyphicon glyphicon-eye-open push-left'></span><strong> - file : </strong>{{layer.name}}</a></li>
+        </ul>
+        </div>
+</nav>
+
+
+
+<input type="button" name="hello" value="load MTL" ng-href='#here' ng-click='goMTL(filepath)' style="margin-left: 10px;"/>
+<input type="button" name="hello" value="load OBJ" ng-href='#here' ng-click='goOBJ(filepath)'/>
+<input type="button" name="hello" value="Get File List" ng-href='#here' ng-click='SplitFileAndGetList(filepath)'/>
 <input ng-model="filepath"/>
+<input type="button" name="hello" value="Delete this Object" ng-href='#here' ng-click='deleteObject(filepath)'/>
+<input type="button" name="hello" value="CleanScene" ng-href='#here' ng-click='cleanTheScene()'/>
 
 
-<div id="sortable" ng-style="menuRightStyle">
-    <ul id="list_sortable" ng-repeat="layer in layers">
-        <li><a id ="layer-{{layer.name}}"><span class='glyphicon glyphicon-eye-open push-left'></span><strong> - file : </strong>{{layer.name}}</a></li>
-    </ul>
-</div>
+
+
 
 
 <pre id="data"></pre>
 <!--div id="GLDiv" style="width:1160px; background:#0B0B3B"/-->
-<div class="gldiv" id="GLDiv" />
+<div class="gldiv" id="GLDiv" style="margin-left: 10px;"/>
 
 <div class="menuRight" ng-style="menuRightStyle" ng-repeat="layer in layers">
 <!--<li><a id ="layer-{{layer.name}}"><span class='glyphicon glyphicon-eye-open push-left'></span><strong> -  Brain Volume_ID: </strong>{{layer.name}}</a></li>-->
