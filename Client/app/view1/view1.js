@@ -297,7 +297,7 @@ angular.module('myApp.view1', ['ngRoute'])
 
         _scene.add(_camera);
 
-        _trackball = new THREE.TinyTrackballControls(_camera, container);
+        _trackball = new THREE.TrackballControls(_camera, container);
         _trackball.rotateSpeed = 3.5;
         _trackball.zoomSpeed = 2.0;
         /*_trackball.panSpeed = 0.5;
