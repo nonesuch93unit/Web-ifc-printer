@@ -112,7 +112,7 @@ webSvr.on("error", function(error) {
 }); 
 
 //begin to listen 8124 port
-webSvr.listen(8124,function(){
+webSvr.listen(8000,function(){
 
     //print the message in console
     console.log('[WebSvr][Start] running at http://127.0.0.1:8124/'); 
@@ -123,7 +123,7 @@ webSvr.listen(8124,function(){
 
 
 //this is the second part, it's for getting request of client, deal with files and send.
-var io = require('socket.io').listen(webSvr);
+var io = require('socket.io')(webSvr, {origins:'127.0.0.1:* http://127.0.0.1:* http://127.0.0.1:*'}).listen(webSvr);
 var exec = require('child_process').exec;
 var threeOBJ = require("three-obj")();
 var objOrigin;
