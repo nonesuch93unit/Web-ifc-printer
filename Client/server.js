@@ -11,7 +11,6 @@ var libHttp = require('http');    //HTTP module
 var libUrl=require('url');    //URL analysing module
 var libFs = require("fs");    //file system module
 var libPath = require("path");    //path analysing module
-var multer = require('multer');
 
 //get the type of request file for the head of http
 var funGetContentType=function(filePath){
@@ -313,121 +312,118 @@ var objToJson = function(letter){
 		threeOBJ.convert( pathobjs+ObjDiffParts[i], pathjson+ObjDiffParts[i]+'.json');
 	}
 	console.log("[transform to json] successful to transform!");
-}
+};
 
 // code : https://repl.it/BwXC/13
 //Use to normalize the faces increment in the splitted OBJ files
 function fixOBJ(f){
+    var start = 12;
+    var min = 9999999;
+    var joiner = "//";
+    var old = 0;
+    var last = 0;
 
-var start = 12;
-var min = 9999999;
-var joiner = "//";
-var old = 0;
-var last = 0;
-
-var array = f.split("\n");
-var word;
-for (i in array){
-    word = array[i].split(" ");
-    for (j in word){
-        if (word[j] === "f"){
-            var count = 3;
-        }
-        if (word[j] === "g"){
-            
-           min = updateMin(i, array) - last ;
-           last = updateMax(i, array) - min +1;
-           
-
-        }
-        if (count > 0 && count < 4 && word[j] != "f"){
-            count--;
-            var numbers = word[j].split(joiner);
-            if (numbers.length != 2){
-                joiner = "/";
-                numbers = word[j].split(joiner);
+    var array = f.split("\n");
+    var word;
+    for (i in array){
+        word = array[i].split(" ");
+        for (j in word){
+            if (word[j] === "f"){
+                var count = 3;
             }
-            
-            for (k in numbers ){
-                numbers[k] = parseInt(numbers[k]) - min + 1;
-                
+            if (word[j] === "g"){
+
+               min = updateMin(i, array) - last ;
+               last = updateMax(i, array) - min +1;
+
+
             }
-            word[j] = numbers.join(joiner);
-            joiner = "//";
+            if (count > 0 && count < 4 && word[j] != "f"){
+                count--;
+                var numbers = word[j].split(joiner);
+                if (numbers.length != 2){
+                    joiner = "/";
+                    numbers = word[j].split(joiner);
+                }
+
+                for (k in numbers ){
+                    numbers[k] = parseInt(numbers[k]) - min + 1;
+
+                }
+                word[j] = numbers.join(joiner);
+                joiner = "//";
+            }
         }
+        array[i] = word.join(" ");
     }
-    array[i] = word.join(" ");
+    f = array.join("\n");
+    //console.log(f);
+    first_pass = true;
+
+    function updateMin(line, array1) {
+        line++;
+        var min1 = 9999999;
+        var word1 = array1[line].split(" ");
+        while(word1[0] != "g" && array1.length > line+1) {
+            for (var j in word1){
+                if (word1[j] === "f"){
+                    var count = 3;
+                }
+                if (count > 0 && count < 4 && word1[j] != "f"){
+                    count--;
+                    var numbers = word1[j].split(joiner);
+                    if (numbers.length != 2){
+                        joiner = "/";
+                        numbers = word1[j].split(joiner);
+                    }
+
+                    for (k in numbers ){
+                        if (min1 > parseInt(numbers[k])){
+                            min1 = parseInt(numbers[k]);
+                        }
+                    }
+                    word1[j] = numbers.join(joiner);
+                    joiner = "//";
+                }
+            }
+            line++;
+            word1 = array1[line].split(" ");
+        }
+        return min1;
+    }
+
+    function updateMax(line, array1) {
+        line++;
+        var max1 = 0;
+        var word1 = array1[line].split(" ");
+        while(word1[0] != "g" && array1.length > line+1) {
+            for (var j in word1){
+                if (word1[j] === "f"){
+                    var count = 3;
+                }
+                if (count > 0 && count < 4 && word1[j] != "f"){
+                    count--;
+                    var numbers = word1[j].split(joiner);
+                    if (numbers.length != 2){
+                        joiner = "/";
+                        numbers = word1[j].split(joiner);
+                    }
+
+                    for (k in numbers ){
+                        if (max1 < parseInt(numbers[k])){
+                            max1 = parseInt(numbers[k]);
+                        }
+                    }
+                    word1[j] = numbers.join(joiner);
+                    joiner = "//";
+                }
+            }
+            line++;
+            word1 = array1[line].split(" ");
+        }
+        return max1;
+    }
+
+    return f;
 }
-f = array.join("\n");
-//console.log(f);
-first_pass = true;
-
-function updateMin(line, array1) {
-    line++;
-    var min1 = 9999999;
-    var word1 = array1[line].split(" ");
-    while(word1[0] != "g" && array1.length > line+1) {
-        for (var j in word1){
-            if (word1[j] === "f"){
-                var count = 3;
-            }
-            if (count > 0 && count < 4 && word1[j] != "f"){
-                count--;
-                var numbers = word1[j].split(joiner);
-                if (numbers.length != 2){
-                    joiner = "/";
-                    numbers = word1[j].split(joiner);
-                }
-                
-                for (k in numbers ){
-                    if (min1 > parseInt(numbers[k])){
-                        min1 = parseInt(numbers[k]);
-                    }
-                }
-                word1[j] = numbers.join(joiner);
-                joiner = "//";
-            }
-        }
-        line++;
-        word1 = array1[line].split(" ");
-    }
-    return min1;
-} 
-
-function updateMax(line, array1) {
-    line++;
-    var max1 = 0;
-    var word1 = array1[line].split(" ");
-    while(word1[0] != "g" && array1.length > line+1) {
-        for (var j in word1){
-            if (word1[j] === "f"){
-                var count = 3;
-            }
-            if (count > 0 && count < 4 && word1[j] != "f"){
-                count--;
-                var numbers = word1[j].split(joiner);
-                if (numbers.length != 2){
-                    joiner = "/";
-                    numbers = word1[j].split(joiner);
-                }
-                
-                for (k in numbers ){
-                    if (max1 < parseInt(numbers[k])){
-                        max1 = parseInt(numbers[k]);
-                    }
-                }
-                word1[j] = numbers.join(joiner);
-                joiner = "//";
-            }
-        }
-        line++;
-        word1 = array1[line].split(" ");
-    }
-    return max1;
-} 
-
-
-
-return f;
-	}
 
