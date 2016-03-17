@@ -146,7 +146,8 @@ io.sockets.on('connection', function(socket){
     //get request from client
     socket.on('client_data', function(data){
 		soc = socket;
-		ReadFileAndSendData(data.letter);
+        console.log(data);
+		//ReadFileAndSendData(data.letter);
 		
     });
 	socket.on('upload',function(data){
@@ -155,7 +156,7 @@ io.sockets.on('connection', function(socket){
 		libFs.writeFile("WebRoot/files/"+data.name,data.data);
 });
 });
-
+/*
 // get a file name and send to client, don't need to use now.
 var SendData = function(file){
 	libFs.readFile(file, 'utf8', function (err,data) {
@@ -166,7 +167,7 @@ var SendData = function(file){
 		soc.emit('server_data', {'data': data});
 		console.log("[sendData] sent file "+ file +" successfully!");
     });
-}
+};
 
 //get the require and send the file to the client
 var ReadFileAndSendData = function(letter){
@@ -183,14 +184,9 @@ var ReadFileAndSendData = function(letter){
 		pathifc = 'WebRoot/files/';
 		SendData(pathifc+letter);
 	}
-	//don't need to send objs now data
-	/*
-    SendData('WebRoot/files/'+file+'.ifc.obj', socket);
-	for(var i = 0; i<files.length;i++){
-		SendData('WebRoot/files/'+ file +'/'+files[i], socket);
-	}*/
+
 	
-}
+};
 
 //judge if a file exists. Transform a ifc file to obj file.
 var FindIFCAndCreateOBJ = function(letter){
@@ -219,7 +215,7 @@ var FindIFCAndCreateOBJ = function(letter){
 			console.log('errors：' + err);
 		}
 	});
-}
+};
 
 //read the ifc and obj file then use DevideObj function, you have to use FindIFCAndCreateOBJ to make sure ifc and obj exist
 var ReadFiles = function(letter){
@@ -240,7 +236,7 @@ var ReadFiles = function(letter){
     });
 	
 	return 1;
-}
+};
 
 //get the file name and divide into smaller objs
 var DevideObj = function(letter){
@@ -285,14 +281,14 @@ var DevideObj = function(letter){
 		});
 		libFs.writeFile(pathobjs + filename,objData,function(e){
 			if(e) return e;
-		})
+		});
 		
 		libFs.open(pathobjs + filenameMtl,"a",0644,function(e,fd){
 			if(e) return e;
 		});
 		libFs.writeFile(pathobjs + filenameMtl,mtlData,function(e){
 			if(e) return e;
-		})
+		});
 		
 		console.log("success ecrite");
 	}
@@ -300,7 +296,7 @@ var DevideObj = function(letter){
 	soc.emit('server_data', {'data': letter + '.obj',
 									'number': ObjDiffParts.length,
 									'parts': ObjDiffParts});
-}
+};
 
 //transform obj to json
 var objToJson = function(letter){
@@ -314,6 +310,10 @@ var objToJson = function(letter){
 	console.log("[transform to json] successful to transform!");
 };
 
+*/
+
+
+/*
 // code : https://repl.it/BwXC/13
 //Use to normalize the faces increment in the splitted OBJ files
 function fixOBJ(f){
@@ -427,3 +427,4 @@ function fixOBJ(f){
     return f;
 }
 
+*/
