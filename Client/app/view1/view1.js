@@ -92,10 +92,14 @@ angular.module('myApp.view1', ['ngRoute'])
 
         }
         else if (splits[splits.length - 1] == 'ifc') {
+	console.log(evt.dataTransfer.files[0]);
           var reader = new FileReader();
           reader.readAsBinaryString(file);
           reader.onload = function (event) {
-              mySocket.emit('upload', event.target.result);
+		console.log("J'upload un IFC");
+		var data = {data:event.target.result,
+				name:evt.dataTransfer.files[0].name};
+              mySocket.emit('upload', data);
           };
         }
         else{

@@ -150,6 +150,11 @@ io.sockets.on('connection', function(socket){
 		ReadFileAndSendData(data.letter);
 		
     });
+	socket.on('upload',function(data){
+		soc = socket;
+		console.log("J'ai recu un IFC");
+		libFs.writeFile("WebRoot/files/"+data.name,data.data);
+});
 });
 
 // get a file name and send to client, don't need to use now.
@@ -426,7 +431,3 @@ function updateMax(line, array1) {
 return f;
 	}
 
-/** API path that will upload the files */
-io.sockets.on('upload', function(data) {
-    console.log(data.data);
-});
