@@ -205,7 +205,7 @@ var FindIFCAndCreateOBJ = function(letter){
 					//send this document!
 					console.log("[createOBJ] this obj doesn't exists!");
 					console.log("[createOBJ] creating obj...");
-					var cmd = 'IfcObj.exe '+ pathifc + letter +'.ifc';
+					var cmd = 'IfcConvert '+ pathifc + letter +'.ifc '+ pathifc + letter +'.obj';
 					exec(cmd, function(error, stdout, stderr) {
 						console.log("[createOBJ] transformed ifc to obj!");
 						ReadFiles(letter);
