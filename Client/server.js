@@ -172,7 +172,7 @@ var SendData = function(file){
 //get the require and send the file to the client
 var ReadFileAndSendData = function(letter){
 	if(letter.split("/").length === 1){
-		console.log("[client required]" + letter + '.ifc.obj');    
+	console.log("[client required]" + letter + '.obj');    
 		pathifc = 'WebRoot/files/';
 		pathobjs = 'WebRoot/files/' + letter + '/';
 		pathjson = 'WebRoot/Jsons/' + letter + '/';
@@ -197,7 +197,7 @@ var ReadFileAndSendData = function(letter){
 var FindIFCAndCreateOBJ = function(letter){
 	libFs.stat(pathifc+letter+'.ifc', function(err, stat) {
 		if(err == null) {
-			libFs.stat(pathifc+letter+'.ifc.obj', function(err, stat){
+			libFs.stat(pathifc+letter+'.obj', function(err, stat){
 				if(err == null){
 						console.log("[createOBJ] this obj exists!");
 						ReadFiles(letter);
@@ -205,7 +205,7 @@ var FindIFCAndCreateOBJ = function(letter){
 					//send this document!
 					console.log("[createOBJ] this obj doesn't exists!");
 					console.log("[createOBJ] creating obj...");
-					var cmd = 'IfcConvert '+ pathifc + letter +'.ifc '+ pathifc + letter +'.ifc';
+					var cmd = './IfcConvert '+ pathifc + letter +'.ifc';
 					exec(cmd, function(error, stdout, stderr) {
 						console.log("[createOBJ] transformed ifc to obj!");
 						ReadFiles(letter);
@@ -224,12 +224,12 @@ var FindIFCAndCreateOBJ = function(letter){
 
 //read the ifc and obj file then use DevideObj function, you have to use FindIFCAndCreateOBJ to make sure ifc and obj exist
 var ReadFiles = function(letter){
-	libFs.readFile(pathifc+letter+'.ifc.obj', 'utf8', function (err,data) {
+	libFs.readFile(pathifc+letter+'.obj', 'utf8', function (err,data) {
 		if (err) {
 			return (err);
 		}
 		objOrigin = data;
-		libFs.readFile(pathifc+letter+'.ifc.mtl', 'utf8', function (err,data) {
+		libFs.readFile(pathifc+letter+'.mtl', 'utf8', function (err,data) {
 			if (err) {
 				return (err);
 			}
@@ -271,7 +271,7 @@ var DevideObj = function(letter){
 		var filenameMtl = letter +parts[i]+'.mtl';
 		ObjDiffParts.push(filename);
 		ObjDiffParts.push(filenameMtl);
-		objData = "mtllib "+ letter +".ifc.mtl\n";
+		objData = "mtllib "+ letter +".mtl\n";
 		for(var j = 0; j < nsubpart; j++){
 			objData += "g " + (i+1) + "\ns 1\n";
 			objData += subparts[j].substr(0,subparts[j].length-1);
@@ -298,7 +298,7 @@ var DevideObj = function(letter){
 		console.log("success ecrite");
 	}
 	//objToJson(letter);
-	soc.emit('server_data', {'data': letter + '.ifc.obj',
+	soc.emit('server_data', {'data': letter + '.obj',
 									'number': ObjDiffParts.length,
 									'parts': ObjDiffParts});
 }
