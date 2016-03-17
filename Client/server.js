@@ -156,7 +156,7 @@ io.sockets.on('connection', function(socket){
 		libFs.writeFile("WebRoot/files/"+data.name,data.data);
 });
 });
-/*
+
 // get a file name and send to client, don't need to use now.
 var SendData = function(file){
 	libFs.readFile(file, 'utf8', function (err,data) {
@@ -310,10 +310,10 @@ var objToJson = function(letter){
 	console.log("[transform to json] successful to transform!");
 };
 
-*/
 
 
-/*
+
+
 // code : https://repl.it/BwXC/13
 //Use to normalize the faces increment in the splitted OBJ files
 function fixOBJ(f){
@@ -426,5 +426,3 @@ function fixOBJ(f){
 
     return f;
 }
-
-*/
