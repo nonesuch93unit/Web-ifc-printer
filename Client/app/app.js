@@ -42,7 +42,7 @@ config(['$routeProvider', function($routeProvider) {
     })
     .
     factory('mySocket', function (socketFactory) {
-      var myIoSocket = io.connect('http://164.132.225.122:8124');
+      var myIoSocket = io.connect('http://164.132.225.122:8000');
 
       var mySocket = socketFactory({
         ioSocket: myIoSocket

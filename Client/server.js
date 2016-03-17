@@ -113,10 +113,10 @@ webSvr.on("error", function(error) {
 }); 
 
 //begin to listen 8124 port
-webSvr.listen(8124,function(){
+webSvr.listen(8000,function(){
 
     //print the message in console
-    console.log('[WebSvr][Start] running at http://127.0.0.1:8124/'); 
+    console.log('[WebSvr][Start] running at http://127.0.0.1:8000/');
 
     //end the timer and print the time
     console.timeEnd('[WebSvr][Start]');
