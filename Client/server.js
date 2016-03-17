@@ -266,7 +266,7 @@ var DevideObj = function(letter){
 		var filenameMtl = letter +parts[i]+'.mtl';
 		ObjDiffParts.push(filename);
 		ObjDiffParts.push(filenameMtl);
-		objData = "mtllib "+ letter +".mtl\n";
+		objData = "mtllib "+ letter +".ifc.mtl\n";
 		for(var j = 0; j < nsubpart; j++){
 			objData += "g " + (i+1) + "\ns 1\n";
 			objData += subparts[j].substr(0,subparts[j].length-1);
