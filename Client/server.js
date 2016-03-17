@@ -267,8 +267,8 @@ var DevideObj = function(letter){
 		var nsubpart = subparts.length;
 		//console.log("::::::::" + nsubpart);
 		
-		var filename = letter +parts[i]+'.obj';
-		var filenameMtl = letter +parts[i]+'.mtl';
+		var filename = letter +parts[i]+'1234.obj';
+		var filenameMtl = letter +parts[i]+'1234.mtl';
 		ObjDiffParts.push(filename);
 		ObjDiffParts.push(filenameMtl);
 		objData = "mtllib "+ letter +".mtl\n";
