@@ -262,8 +262,8 @@ var DevideObj = function(letter){
 		var nsubpart = subparts.length;
 		//console.log("::::::::" + nsubpart);
 		
-		var filename = letter +parts[i]+'1234.obj';
-		var filenameMtl = letter +parts[i]+'1234.mtl';
+		var filename = letter +parts[i]+'.obj';
+		var filenameMtl = letter +parts[i]+'.mtl';
 		ObjDiffParts.push(filename);
 		ObjDiffParts.push(filenameMtl);
 		objData = "mtllib "+ letter +".mtl\n";
@@ -272,7 +272,7 @@ var DevideObj = function(letter){
 			objData += subparts[j].substr(0,subparts[j].length-1);
 		}
 
-		objData = fixOBJ(objData);
+		//objData = fixOBJ(objData);
 		
 		console.log("success create");
 		
