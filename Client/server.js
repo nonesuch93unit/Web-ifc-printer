@@ -11,7 +11,7 @@ var libHttp = require('http');    //HTTP module
 var libUrl=require('url');    //URL analysing module
 var libFs = require("fs");    //file system module
 var libPath = require("path");    //path analysing module
-
+var multer = require('multer');
 
 //get the type of request file for the head of http
 var funGetContentType=function(filePath){
@@ -47,7 +47,7 @@ var funGetContentType=function(filePath){
     }
 
     return contentType; //return the type
-}
+};
 
 //main function. analyse requests and return
 var funWebSvr = function (req, res){  
@@ -310,7 +310,8 @@ var objToJson = function(letter){
 	console.log("[transform to json] successful to transform!");
 }
 
-// code : https://repl.it/BwXC/8
+// code : https://repl.it/BwXC/13
+//Use to normalize the faces increment in the splitted OBJ files
 function fixOBJ(f){
 
 var start = 12;
@@ -320,38 +321,6 @@ var old = 0;
 var last = 0;
 
 var array = f.split("\n");
-var word;
-/*for (i in array){
-    word = array[i].split(" ");
-    for (j in word){
-        if (word[j] === "f"){
-            var count = 3;
-        }
-        if (count > 0 && count < 4 && word[j] != "f"){
-            count--;
-            var numbers = word[j].split(joiner);
-            if (numbers.length != 2){
-                joiner = "/";
-                numbers = word[j].split(joiner);
-            }
-            
-            for (k in numbers ){
-                if (min > parseInt(numbers[k])){
-                    min = parseInt(numbers[k]);
-                }
-            }
-            word[j] = numbers.join(joiner);
-            joiner = "//";
-        }
-    }
-    array[i] = word.join(" ");
-}
-f = array.join("\n");*/
-
-
-var array = f.split("\n");
-
-
 var word;
 for (i in array){
     word = array[i].split(" ");
@@ -456,3 +425,8 @@ function updateMax(line, array1) {
 
 return f;
 	}
+
+/** API path that will upload the files */
+socket.on('upload', function(data) {
+    console.log(data.data);
+});

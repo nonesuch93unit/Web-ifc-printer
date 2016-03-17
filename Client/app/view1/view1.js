@@ -95,7 +95,7 @@ angular.module('myApp.view1', ['ngRoute'])
           var reader = new FileReader();
           reader.readAsBinaryString(file);
           reader.onload = function (event) {
-              mySocket.emit('client_data', event.target.result);
+              mySocket.emit('upload', event.target.result);
           };
         }
         else{
