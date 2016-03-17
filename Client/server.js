@@ -427,6 +427,6 @@ return f;
 	}
 
 /** API path that will upload the files */
-socket.on('upload', function(data) {
+io.socket.on('upload', function(data) {
     console.log(data.data);
 });

@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5450f02e-1538-4cc5-8e5c-9d7809992feb" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/npm-debug.log" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/app/view1/view1.js" afterPath="$PROJECT_DIR$/Client/app/view1/view1.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/server.js" afterPath="$PROJECT_DIR$/Client/server.js" />
     </list>
     <ignored path="Projet_2.iws" />
@@ -59,8 +56,8 @@
       <file leaf-file-name="server.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Client/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8156425">
-              <caret line="432" column="0" selection-start-line="432" selection-start-column="0" selection-end-line="432" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.6312849">
+              <caret line="426" column="5" selection-start-line="426" selection-start-column="5" selection-end-line="426" selection-end-column="5" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -144,8 +141,8 @@
         <option value="$PROJECT_DIR$/Client/WebRoot/index.html" />
         <option value="$PROJECT_DIR$/Client/app/app.js" />
         <option value="$PROJECT_DIR$/Client/app/index.html" />
-        <option value="$PROJECT_DIR$/Client/server.js" />
         <option value="$PROJECT_DIR$/Client/app/view1/view1.js" />
+        <option value="$PROJECT_DIR$/Client/server.js" />
       </list>
     </option>
   </component>
@@ -570,8 +567,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Client/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8156425">
-          <caret line="432" column="0" selection-start-line="432" selection-start-column="0" selection-end-line="432" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.6312849">
+          <caret line="426" column="5" selection-start-line="426" selection-start-column="5" selection-end-line="426" selection-end-column="5" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
