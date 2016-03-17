@@ -146,8 +146,8 @@ io.sockets.on('connection', function(socket){
     //get request from client
     socket.on('client_data', function(data){
 		soc = socket;
-        console.log(data);
-		//ReadFileAndSendData(data.letter);
+        console.log("client get " + data.letter);
+		ReadFileAndSendData(data.letter);
 		
     });
 	socket.on('upload',function(data){
