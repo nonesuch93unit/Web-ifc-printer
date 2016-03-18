@@ -172,7 +172,7 @@ var SendData = function(file){
 //get the require and send the file to the client
 var ReadFileAndSendData = function(letter){
 	if(letter.split("/").length === 1){
-	console.log("[client required]" + letter + '.obj');    
+	console.log("[client required]" + letter + '.ifc.obj');    
 		pathifc = 'WebRoot/files/';
 		pathobjs = 'WebRoot/files/' + letter + '/';
 		pathjson = 'WebRoot/Jsons/' + letter + '/';
@@ -192,7 +192,7 @@ var ReadFileAndSendData = function(letter){
 var FindIFCAndCreateOBJ = function(letter){
 	libFs.stat(pathifc+letter+'.ifc', function(err, stat) {
 		if(err == null) {
-			libFs.stat(pathifc+letter+'.obj', function(err, stat){
+			libFs.stat(pathifc+letter+'.ifc.obj', function(err, stat){
 				if(err == null){
 						console.log("[createOBJ] this obj exists!");
 						ReadFiles(letter);
@@ -256,14 +256,14 @@ var DevideObj = function(letter){
 	//console.log(tempstr);
 	for(var i = 0; i< npart; i++){
 		parts[i] = parts[i].substr(7);
-		console.log("[obj split]creating" + parts[i]+".obj");
+		console.log("[obj split]creating" + parts[i]+".ifc.obj");
 		patt = eval("/usemtl " + parts[i] + "[\\s\\S]*?\\ng/g");
 		var subparts = tempstr.match(patt);
 		var nsubpart = subparts.length;
 		//console.log("::::::::" + nsubpart);
 		
-		var filename = letter +parts[i]+'.obj';
-		var filenameMtl = letter +parts[i]+'.mtl';
+		var filename = letter +parts[i]+'.ifc.obj';
+		var filenameMtl = letter +parts[i]+'.ifc.mtl';
 		ObjDiffParts.push(filename);
 		ObjDiffParts.push(filenameMtl);
 		objData = "mtllib "+ letter +".ifc.mtl\n";
@@ -293,7 +293,7 @@ var DevideObj = function(letter){
 		console.log("success ecrite");
 	}
 	//objToJson(letter);
-	soc.emit('server_data', {'data': letter + '.obj',
+	soc.emit('server_data', {'data': letter + '.ifc.obj',
 									'number': ObjDiffParts.length,
 									'parts': ObjDiffParts});
 };
