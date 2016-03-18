@@ -201,8 +201,9 @@ var FindIFCAndCreateOBJ = function(letter){
 					console.log("[createOBJ] this obj doesn't exists!");
 					console.log("[createOBJ] creating obj...");
 					var cmd = './IfcObj '+ pathifc + letter +'.ifc';
-console.log(cmd);					
-exec(cmd, function(error, stdout, stderr) {
+                    //console.log(cmd);					
+                    
+                    exec(cmd, function(error, stdout, stderr) {
 						console.log("[createOBJ] transformed ifc to obj!");
 						ReadFiles(letter);
 					})
@@ -220,12 +221,12 @@ exec(cmd, function(error, stdout, stderr) {
 
 //read the ifc and obj file then use DevideObj function, you have to use FindIFCAndCreateOBJ to make sure ifc and obj exist
 var ReadFiles = function(letter){
-	libFs.readFile(pathifc+letter+'.obj', 'utf8', function (err,data) {
+	libFs.readFile(pathifc+letter+'.ifc.obj', 'utf8', function (err,data) {
 		if (err) {
 			return (err);
 		}
 		objOrigin = data;
-		libFs.readFile(pathifc+letter+'.mtl', 'utf8', function (err,data) {
+		libFs.readFile(pathifc+letter+'.ifc.mtl', 'utf8', function (err,data) {
 			if (err) {
 				return (err);
 			}
