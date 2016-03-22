@@ -274,7 +274,7 @@ var DevideObj = function(letter){
 			objData += subparts[j].substr(0,subparts[j].length-1);
 		}
 
-		//objData = fixOBJ(objData);
+		objData = fixOBJ(objData);
 		
 		console.log("success create");
 		

@@ -302,26 +302,27 @@ angular.module('myApp.view1', ['ngRoute'])
         _scene.add(_camera);
 
         _trackball = new THREE.TrackballControls(_camera, container);
-        _trackball.rotateSpeed = 3.5;
-        _trackball.zoomSpeed = 2.0;
-        /*_trackball.panSpeed = 0.5;
-        _trackball.noZoom = false;
-        _trackball.noPan = false;
-        _trackball.staticMoving = true;
-        _trackball.dynamicDampingFactor = 0.3;
-        _trackball.minDistance = 1;
-        _trackball.maxDistance = 200;
-        _trackball.keys = [82, 90, 80]; // [r:rotate, z:zoom, p:pan]*/
-        //_trackball.addEventListener('change', render);
+        _trackball.rotateSpeed = 2.0;
+        _trackball.zoomSpeed = 1.0;
+	//_trackball.target.z = 150;
+        _trackball.panSpeed = 0.5;
+        //_trackball.noZoom = false;
+        //_trackball.noPan = false;
+       // _trackball.staticMoving = true;
+        //_trackball.dynamicDampingFactor = 0.3;
+        //_trackball.minDistance = 1;
+        //_trackball.maxDistance = 300;
+        //_trackball.keys = [82, 90, 80]; // [r:rotate, z:zoom, p:pan]
+        _trackball.addEventListener('change', render);
 
         // create lights
-        var light1 = new THREE.PointLight(0xFFFFFF);
+        var light1 = new THREE.PointLight(0x969696);
         var light2 = new THREE.PointLight(0xFFFFFF);
-        var light3 = new THREE.PointLight(0xFFFFFF);
-        var light4 = new THREE.PointLight(0xFFFFFF);
+        var light3 = new THREE.PointLight(0x969696);
+        var light4 = new THREE.PointLight(0xCCCCC0);
 
         light1.position.x = 100;
-        light1.position.y = 50;
+        light1.position.y = 100;
         light1.position.z = 200;
 
         light2.position.x = -100;
@@ -334,7 +335,7 @@ angular.module('myApp.view1', ['ngRoute'])
 
         light4.position.x = -100;
         light4.position.y = -150;
-        light4.position.z = 100;
+        light4.position.z = 150;
 
         _scene.add(light1);
         _scene.add(light2);
@@ -469,7 +470,7 @@ $scope.layers = [];
 
       function readMTL(filepath){
         var mtlData;
-        sendRequest(filepath+".mtl");
+        sendRequest(filepath+".ifc.mtl");
         mySocket.on("server_data", function(data_mtl){
           if(data_mtl.data === 0){
             console.log('this mtl does not exist!!');
@@ -482,7 +483,7 @@ $scope.layers = [];
             }});
       }
       function loadOBJ(filepath,mtl){
-        sendRequest(filepath+".obj");
+        sendRequest(filepath+".ifc.obj");
         mySocket.on("server_data", function(objData){
           if(objData.data === 0){
             console.log('this OBJ does not exist!!');
