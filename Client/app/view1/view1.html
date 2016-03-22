@@ -25,12 +25,13 @@
 <nav class="mobile">
     <button id="toggle">Toggle</button>
         <div id="sortable" ng-style="menuRightStyle">
-            <button class="btn btn-primary"  type="button" ng-click='goOBJ(filepath)'>load OBJ</button>
+            <input class="btn btn-primary"  type="button" ng-click='goOBJ(filepath)'>load OBJ</input>
             <ul id="list_sortable" ng-repeat="layer in layers">
                 <li ng-click="selectFile(layer.name)"><a id ="layer-{{layer.name}}"><span class='glyphicon glyphicon-eye-open push-left'></span><strong> - file : </strong>{{layer.name}}</a></li>
             </ul>
         </div>
 </nav>
+
 <button class="btn btn-primary"  type="button" ng-click='goOBJ(filepath)'>load OBJ</button>
 <button class="btn btn-primary"  type="button" ng-click='SplitFileAndGetList(filepath)'>Get File List</button>
 <input type="text" class="input-small"  ng-model="filepath"/>
