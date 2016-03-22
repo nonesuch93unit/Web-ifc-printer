@@ -15,7 +15,7 @@
 </nav>
 
 <nav class="mobile">
-    <button>Toggle</button>
+    <button id="toggle">Toggle</button>
     <div id="sortable" ng-style="menuRightStyle">
         <ul id="list_sortable" ng-repeat="layer in layers">
             <li ng-click="selectFile(layer.name)"><a id ="layer-{{layer.name}}"><span class='glyphicon glyphicon-eye-open push-left'></span><strong> - file : </strong>{{layer.name}}</a></li>
@@ -28,7 +28,7 @@
 <button class="btn btn-primary"  type="button" ng-click='goMTL(filepath)' >load MTL</button>
 <button class="btn btn-primary"  type="button" ng-click='goOBJ(filepath)'>load OBJ</button>
 <button class="btn btn-primary"  type="button" ng-click='SplitFileAndGetList(filepath)'>Get File List</button>
-<input type="text" class="form-control"  ng-model="filepath"/>
+<input type="text" class="input-small"  ng-model="filepath"/>
 <button class="btn btn-primary"  type="button" ng-click='deleteObject(filepath)'>Delete this Object</button>
 <button class="btn btn-primary"  type="button" ng-click='cleanTheScene()'>CleanScene</button>
 
@@ -39,7 +39,7 @@
 
 <!--<pre id="data"></pre>-->
 <!--div id="GLDiv" style="width:1160px; background:#0B0B3B"/-->
-<div class="gldiv" id="GLDiv" style="margin-left: 10px;"/>
+<div class="gldiv" id="GLDiv" style="margin-left: 10px; margin-top: 5px;"/>
 
 <!--<div class="menuRight" ng-style="menuRightStyle" ng-repeat="layer in layers">-->
 <!--&lt;!&ndash;<li><a id ="layer-{{layer.name}}"><span class='glyphicon glyphicon-eye-open push-left'></span><strong> -  Brain Volume_ID: </strong>{{layer.name}}</a></li>&ndash;&gt;-->
