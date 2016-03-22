@@ -25,12 +25,12 @@
 
 
 
-<button class="btn btn-primary"  type="button" name="hello" value="load MTL" ng-href='#here' ng-click='goMTL(filepath)' style="margin-left: 10px;">load MTL</button>
-<button class="btn btn-primary"  type="button" name="hello" value="load OBJ" ng-href='#here' ng-click='goOBJ(filepath)'>load OBJ</button>
-<button class="btn btn-primary"  type="button" name="hello" value="Get File List" ng-href='#here' ng-click='SplitFileAndGetList(filepath)'>Get File List</button>
-<input  ng-model="filepath"/>
-<button class="btn btn-primary"  type="button" name="hello" value="Delete this Object" ng-href='#here' ng-click='deleteObject(filepath)'>Delete this Object</button>
-<button class="btn btn-primary"  type="button" name="hello" value="CleanScene" ng-href='#here' ng-click='cleanTheScene()'>CleanScene</button>
+<button class="btn btn-primary"  type="button" ng-click='goMTL(filepath)' >load MTL</button>
+<button class="btn btn-primary"  type="button" ng-click='goOBJ(filepath)'>load OBJ</button>
+<button class="btn btn-primary"  type="button" ng-click='SplitFileAndGetList(filepath)'>Get File List</button>
+<input type="text" class="form-control"  ng-model="filepath"/>
+<button class="btn btn-primary"  type="button" ng-click='deleteObject(filepath)'>Delete this Object</button>
+<button class="btn btn-primary"  type="button" ng-click='cleanTheScene()'>CleanScene</button>
 
 
 
