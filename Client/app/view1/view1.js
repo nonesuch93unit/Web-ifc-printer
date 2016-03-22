@@ -424,10 +424,10 @@ angular.module('myApp.view1', ['ngRoute'])
         function onWindowResize(){
 
         if($window.innerWidth<800){
-          _camera.aspect = ($window.innerWidth  - 20 ) / ($window.innerHeight - headerSize);
+          _camera.aspect = ($window.innerWidth  - 20 ) / ($window.innerHeight);
           _camera.updateProjectionMatrix();
 
-          _renderer.setSize( $window.innerWidth  - 20 , $window.innerHeight - headerSize);
+          _renderer.setSize( $window.innerWidth  - 20 , $window.innerHeight);
         }
           else{
           _camera.aspect = ($window.innerWidth  -rightMenuRatio ) / ($window.innerHeight - headerSize);
