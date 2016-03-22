@@ -285,7 +285,7 @@ angular.module('myApp.view1', ['ngRoute'])
           }
 
 
-          var height = $window.innerHeight - headerSize;
+          var height = $window.innerHeight;
         }
 
         _camera = new THREE.PerspectiveCamera(40, width / height, 0.1, 500);
