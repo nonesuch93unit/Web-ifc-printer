@@ -350,14 +350,14 @@ angular.module('myApp.view1', ['ngRoute'])
 
         container.appendChild(_renderer.domElement);
 
-        document.addEventListener('mousewheel', onDocumentMouseWheel, false);
+        //document.addEventListener('mousewheel', onDocumentMouseWheel, false);
 
         //_renderer.domElement.addEventListener('mousedown', onDocumentMouseDown, false);
 
         var container = document.getElementById("GLDiv");
       }
 
-      function onDocumentMouseWheel(event) {
+      /*function onDocumentMouseWheel(event) {
         _camera.fov -= event.wheelDeltaY * 0.05;
 
         if (_camera.fov < 10.0) {
@@ -371,7 +371,7 @@ angular.module('myApp.view1', ['ngRoute'])
         _camera.updateProjectionMatrix();
 
         render();
-      }
+      }*/
 
       /*function onDocumentMouseDown(event) {
 
