@@ -396,7 +396,7 @@ angular.module('myApp.view1', ['ngRoute'])
          -((event.clientY - container.offsetTop) / _scene.HEIGHT) * 2 + 1,
          0.5);
 
-        _projector.unprojectVector(vector, _camera);
+        vector.unproject( _camera);
 
         var intersects = ray.intersectObjects(_entities);
 
