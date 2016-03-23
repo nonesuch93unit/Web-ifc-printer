@@ -38,8 +38,8 @@ angular.module('myApp.view1', ['ngRoute'])
 
         // Setup the dnd listeners.
         var dropZone = document.getElementById('dropzone');
-        dropZone.addEventListener('dragover', onFileDragOver, false);
-        dropZone.addEventListener('drop', onFileDrop, false);
+        //dropZone.addEventListener('dragover', onFileDragOver, false);
+        //dropZone.addEventListener('drop', onFileDrop, false);
       }
 
       function onFileDragOver(evt) {
@@ -316,7 +316,7 @@ angular.module('myApp.view1', ['ngRoute'])
         //_trackball.minDistance = 1;
         //_trackball.maxDistance = 300;
         //_trackball.keys = [82, 90, 80]; // [r:rotate, z:zoom, p:pan]
-        //_trackball.addEventListener('change', render);
+        _trackball.addEventListener('change', render);
 
         // create lights
         var light1 = new THREE.PointLight(0x969696);
