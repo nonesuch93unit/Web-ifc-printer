@@ -297,10 +297,9 @@ angular.module('myApp.view1', ['ngRoute'])
         //controls.lookSpeed = 1;
         //controls.rollSpeed = 0;
         //controls.autoForward = false;
-        _camera.lookAt(0,0,0);
         //_camera.position.x = -100;
         //_camera.position.y = 0;
-        //_camera.position.z = 50;
+        _camera.position.z = 50;
 
         _scene.add(_camera);
 
