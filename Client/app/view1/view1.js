@@ -303,7 +303,7 @@ angular.module('myApp.view1', ['ngRoute'])
 
         _scene.add(_camera);
 
-        _trackball = new THREE.TrackballControls(_camera, container);
+        _trackball = new THREE.OrbitControls(_camera, container);
         _trackball.rotateSpeed = 2.0;
         _trackball.zoomSpeed = 1.0;
 	//_trackball.target.z = 150;
