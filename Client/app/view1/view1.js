@@ -299,7 +299,7 @@ angular.module('myApp.view1', ['ngRoute'])
         //controls.autoForward = false;
         //_camera.position.x = -100;
         //_camera.position.y = 0;
-        _camera.position.z = 50;
+        _camera.position.z = 0;
 
         _scene.add(_camera);
 
