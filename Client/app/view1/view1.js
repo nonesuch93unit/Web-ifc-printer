@@ -312,7 +312,6 @@ angular.module('myApp.view1', ['ngRoute'])
         //_trackball.dynamicDampingFactor = 0.3;
         //_trackball.minDistance = 1;
         //_trackball.maxDistance = 300;
-        _trackball.keys = [ 65, 83, 68 ];
         //_trackball.keys = [82, 90, 80]; // [r:rotate, z:zoom, p:pan]
         //_trackball.addEventListener('change', render);
 
