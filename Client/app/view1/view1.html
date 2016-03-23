@@ -1,7 +1,7 @@
 <div style="height:15px;"></div>
 
 <nav class="desktop">
-    <div id="sortable" ng-style="menuRightStyle">
+    <div id="sortable" ng-style="menuRightStyle" style="width:224px;">
         <ul id="list_sortable" ng-repeat="layer in layers">
             <li ng-click="selectFile(layer.name)"><a id ="layer-{{layer.name}}"><span class='glyphicon glyphicon-eye-open push-left'></span><strong> - file : </strong>{{layer.name}}</a></li>
         </ul>
@@ -24,7 +24,7 @@
 
 <nav class="mobile">
     <button id="toggle">Toggle</button>
-        <div id="sortable" ng-style="menuRightStyle">
+        <div id="sortable" ng-style="menuRightStyle" style="width:224px;">
             <input class="btn btn-primary"  type="button" ng-click='goOBJ(filepath)' value="load OBJ"/>
             <input class="btn btn-primary"  type="button" ng-click='SplitFileAndGetList(filepath)' value="Get File List" />
 

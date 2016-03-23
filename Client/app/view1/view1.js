@@ -11,6 +11,9 @@ angular.module('myApp.view1', ['ngRoute'])
 
 .controller('View1Ctrl',
     ['$scope', '$window','mySocket', function($scope, $window,mySocket) {
+      //variable de la scene threejs
+      var _camera, _scene, _renderer, _trackball, _projector;
+
       //envoie de donnée au serveur
       var sendRequest = function(request){
         mySocket.emit('client_data', {'letter': request});
@@ -22,8 +25,7 @@ angular.module('myApp.view1', ['ngRoute'])
       var headerSize = 70;
       var rightMenuRatio = 245;
 
-      //variable de la scene threejs
-      var _camera, _scene, _renderer, _trackball, _projector;
+
 
       var _entities = [];
 
@@ -308,6 +310,7 @@ angular.module('myApp.view1', ['ngRoute'])
         //_trackball.panSpeed = 0.5;
         _trackball.noZoom = false;
         _trackball.noPan = false;
+        _trackball.target.set(0, 0, 0);
        // _trackball.staticMoving = true;
         _trackball.dynamicDampingFactor = 0.3;
         //_trackball.minDistance = 1;
