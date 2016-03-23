@@ -26,11 +26,21 @@
       <file leaf-file-name="view1.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Client/app/view1/view1.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.87184465">
-              <caret line="301" column="10" selection-start-line="301" selection-start-column="10" selection-end-line="301" selection-end-column="10" />
+            <state vertical-scroll-proportion="0.48737863">
+              <caret line="298" column="30" selection-start-line="298" selection-start-column="30" selection-end-line="298" selection-end-column="30" />
               <folding>
-                <marker date="1458776258606" expanded="true" signature="7169:8154" placeholder="{...}" />
+                <marker date="1458776468647" expanded="true" signature="7169:8185" placeholder="{...}" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="three.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Client/app/bower_components/three.js/build/three.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="72.48485">
+              <caret line="16921" column="34" selection-start-line="16921" selection-start-column="17" selection-end-line="16921" selection-end-column="34" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -62,16 +72,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MouseControls.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Client/app/bower_components/three.js/examples/js/controls/MouseControls.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -374,6 +374,36 @@
               <option name="myItemId" value="bower_components" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="three.js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Projet_2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Projet_2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bower_components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -559,7 +589,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="156" column="41" selection-start-line="156" selection-start-column="41" selection-end-line="156" selection-end-column="41" />
           <folding>
-            <marker date="1458776258606" expanded="true" signature="7169:8154" placeholder="{...}" />
+            <marker date="1458776468647" expanded="true" signature="7169:8185" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -642,7 +672,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="438" column="19" selection-start-line="438" selection-start-column="19" selection-end-line="438" selection-end-column="19" />
           <folding>
-            <marker date="1458776258606" expanded="true" signature="7169:8154" placeholder="{...}" />
+            <marker date="1458776468647" expanded="true" signature="7169:8185" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -935,12 +965,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Client/app/bower_components/three.js/build/three.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="72.48485">
+          <caret line="16921" column="34" selection-start-line="16921" selection-start-column="17" selection-end-line="16921" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Client/app/view1/view1.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.87184465">
-          <caret line="301" column="10" selection-start-line="301" selection-start-column="10" selection-end-line="301" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.48737863">
+          <caret line="298" column="30" selection-start-line="298" selection-start-column="30" selection-end-line="298" selection-end-column="30" />
           <folding>
-            <marker date="1458776258606" expanded="true" signature="7169:8154" placeholder="{...}" />
+            <marker date="1458776468647" expanded="true" signature="7169:8185" placeholder="{...}" />
           </folding>
         </state>
       </provider>
