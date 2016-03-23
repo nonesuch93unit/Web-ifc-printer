@@ -305,15 +305,16 @@ angular.module('myApp.view1', ['ngRoute'])
         _trackball.rotateSpeed = 2.0;
         _trackball.zoomSpeed = 1.0;
 	//_trackball.target.z = 150;
-        _trackball.panSpeed = 0.5;
+        //_trackball.panSpeed = 0.5;
         //_trackball.noZoom = false;
         //_trackball.noPan = false;
        // _trackball.staticMoving = true;
         //_trackball.dynamicDampingFactor = 0.3;
         //_trackball.minDistance = 1;
         //_trackball.maxDistance = 300;
+        _trackball.keys = [ 65, 83, 68 ];
         //_trackball.keys = [82, 90, 80]; // [r:rotate, z:zoom, p:pan]
-        _trackball.addEventListener('change', render);
+        //_trackball.addEventListener('change', render);
 
         // create lights
         var light1 = new THREE.PointLight(0x969696);
