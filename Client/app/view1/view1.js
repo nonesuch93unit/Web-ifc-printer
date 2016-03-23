@@ -379,6 +379,7 @@ angular.module('myApp.view1', ['ngRoute'])
       function onDocumentMouseDown(event) {
 
         event.preventDefault();
+        console.log("hello, on a cliqué");
 
         var container = document.getElementById("GLDiv");
 
