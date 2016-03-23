@@ -309,12 +309,11 @@ THREE.TrackballControls = function ( object, domElement ) {
 
 		}
 
-		//force pan control
-		//if ( ! _this.noPan ) {
+		if ( ! _this.noPan ) {
 
 			_this.panCamera();
 
-		//}
+		}
 
 		_this.object.position.addVectors( _this.target, _eye );
 
