@@ -389,7 +389,7 @@ angular.module('myApp.view1', ['ngRoute'])
 
         var ray = new THREE.Ray(
             _camera.position,
-            vector.subSelf(_camera.position).normalize());
+            vector.sub(_camera.position).normalize());
 
         var vector = new THREE.Vector3(
          ((event.clientX - container.offsetLeft) / _scene.WIDTH) * 2 - 1,

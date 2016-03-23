@@ -26,10 +26,10 @@
       <file leaf-file-name="view1.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Client/app/view1/view1.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.55728155">
-              <caret line="409" column="7" selection-start-line="409" selection-start-column="7" selection-end-line="409" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.52524275">
+              <caret line="396" column="14" selection-start-line="396" selection-start-column="14" selection-end-line="396" selection-end-column="14" />
               <folding>
-                <marker date="1458774903021" expanded="true" signature="7169:8145" placeholder="{...}" />
+                <marker date="1458775001983" expanded="true" signature="7169:8145" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -559,7 +559,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="156" column="41" selection-start-line="156" selection-start-column="41" selection-end-line="156" selection-end-column="41" />
           <folding>
-            <marker date="1458774903021" expanded="true" signature="7169:8145" placeholder="{...}" />
+            <marker date="1458775001983" expanded="true" signature="7169:8145" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -642,7 +642,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="438" column="19" selection-start-line="438" selection-start-column="19" selection-end-line="438" selection-end-column="19" />
           <folding>
-            <marker date="1458774903021" expanded="true" signature="7169:8145" placeholder="{...}" />
+            <marker date="1458775001983" expanded="true" signature="7169:8145" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -937,10 +937,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Client/app/view1/view1.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55728155">
-          <caret line="409" column="7" selection-start-line="409" selection-start-column="7" selection-end-line="409" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.52524275">
+          <caret line="396" column="14" selection-start-line="396" selection-start-column="14" selection-end-line="396" selection-end-column="14" />
           <folding>
-            <marker date="1458774903021" expanded="true" signature="7169:8145" placeholder="{...}" />
+            <marker date="1458775001983" expanded="true" signature="7169:8145" placeholder="{...}" />
           </folding>
         </state>
       </provider>
