@@ -301,7 +301,7 @@ angular.module('myApp.view1', ['ngRoute'])
 
         _scene.add(_camera);
 
-        _trackball = new THREE.TrackballControls(_camera, container);
+        _trackball = new THREE.OrthographicTrackballControls(_camera, container);
         _trackball.rotateSpeed = 2.0;
         _trackball.zoomSpeed = 1.0;
 	//_trackball.target.z = 150;
@@ -309,7 +309,7 @@ angular.module('myApp.view1', ['ngRoute'])
         _trackball.noZoom = false;
         _trackball.noPan = false;
        // _trackball.staticMoving = true;
-        //_trackball.dynamicDampingFactor = 0.3;
+        _trackball.dynamicDampingFactor = 0.3;
         //_trackball.minDistance = 1;
         //_trackball.maxDistance = 300;
         //_trackball.keys = [82, 90, 80]; // [r:rotate, z:zoom, p:pan]
