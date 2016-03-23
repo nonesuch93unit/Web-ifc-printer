@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5450f02e-1538-4cc5-8e5c-9d7809992feb" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/app/bower_components/three.js/examples/js/controls/TrackballControls.js" afterPath="$PROJECT_DIR$/Client/app/bower_components/three.js/examples/js/controls/TrackballControls.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/app/view1/view1.js" afterPath="$PROJECT_DIR$/Client/app/view1/view1.js" />
     </list>
     <ignored path="Projet_2.iws" />
@@ -23,13 +24,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="view1.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="view1.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client/app/view1/view1.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.51941746">
-              <caret line="299" column="31" selection-start-line="299" selection-start-column="31" selection-end-line="299" selection-end-column="31" />
+            <state vertical-scroll-proportion="-4.1796875">
+              <caret line="299" column="30" selection-start-line="299" selection-start-column="30" selection-end-line="299" selection-end-column="30" />
               <folding>
-                <marker date="1458776752159" expanded="true" signature="7169:8151" placeholder="{...}" />
+                <marker date="1458776891612" expanded="true" signature="7169:8148" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -123,11 +124,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TrackballControls.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TrackballControls.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Client/app/bower_components/three.js/examples/js/controls/TrackballControls.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.14507772">
+              <caret line="588" column="0" selection-start-line="588" selection-start-column="0" selection-end-line="588" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -152,12 +153,12 @@
         <option value="$PROJECT_DIR$/Server/server.js" />
         <option value="$PROJECT_DIR$/Client/WebRoot/index.html" />
         <option value="$PROJECT_DIR$/Client/server.js" />
-        <option value="$PROJECT_DIR$/Client/app/bower_components/three.js/examples/js/controls/TrackballControls.js" />
         <option value="$PROJECT_DIR$/Client/app/view1/view1.html" />
         <option value="$PROJECT_DIR$/Client/app/app.css" />
         <option value="$PROJECT_DIR$/Client/app/app.js" />
         <option value="$PROJECT_DIR$/Client/app/index.html" />
         <option value="$PROJECT_DIR$/Client/app/view1/view1.js" />
+        <option value="$PROJECT_DIR$/Client/app/bower_components/three.js/examples/js/controls/TrackballControls.js" />
       </list>
     </option>
   </component>
@@ -589,7 +590,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="156" column="41" selection-start-line="156" selection-start-column="41" selection-end-line="156" selection-end-column="41" />
           <folding>
-            <marker date="1458776752159" expanded="true" signature="7169:8151" placeholder="{...}" />
+            <marker date="1458776891612" expanded="true" signature="7169:8148" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -672,7 +673,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="438" column="19" selection-start-line="438" selection-start-column="19" selection-end-line="438" selection-end-column="19" />
           <folding>
-            <marker date="1458776752159" expanded="true" signature="7169:8151" placeholder="{...}" />
+            <marker date="1458776891612" expanded="true" signature="7169:8148" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -911,14 +912,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Client/app/bower_components/three.js/examples/js/controls/TrackballControls.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Client/app/view1/view1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="11.142858">
@@ -975,11 +968,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Client/app/view1/view1.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51941746">
-          <caret line="299" column="31" selection-start-line="299" selection-start-column="31" selection-end-line="299" selection-end-column="31" />
+        <state vertical-scroll-proportion="-4.1796875">
+          <caret line="299" column="30" selection-start-line="299" selection-start-column="30" selection-end-line="299" selection-end-column="30" />
           <folding>
-            <marker date="1458776752159" expanded="true" signature="7169:8151" placeholder="{...}" />
+            <marker date="1458776891612" expanded="true" signature="7169:8148" placeholder="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/app/bower_components/three.js/examples/js/controls/TrackballControls.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14507772">
+          <caret line="588" column="0" selection-start-line="588" selection-start-column="0" selection-end-line="588" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
