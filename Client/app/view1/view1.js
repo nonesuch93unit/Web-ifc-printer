@@ -283,7 +283,7 @@ angular.module('myApp.view1', ['ngRoute'])
             var width = $window.innerWidth - 20;
           }
           else{
-            var width = $window.innerWidth - rightMenuRatio;
+            var width = $window.innerWidth - rightMenuRatio -20;
           }
 
 
