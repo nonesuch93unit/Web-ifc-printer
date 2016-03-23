@@ -376,7 +376,7 @@ angular.module('myApp.view1', ['ngRoute'])
         render();
       }
 
-      /*function onDocumentMouseDown(event) {
+      function onDocumentMouseDown(event) {
 
         event.preventDefault();
 
@@ -407,7 +407,7 @@ angular.module('myApp.view1', ['ngRoute'])
           alert("Intersect: " + intersects.length)
 
         }
-      }*/
+      }
 
       function animate() {
         requestAnimationFrame(animate);
