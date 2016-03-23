@@ -306,8 +306,8 @@ angular.module('myApp.view1', ['ngRoute'])
         _trackball.zoomSpeed = 1.0;
 	//_trackball.target.z = 150;
         //_trackball.panSpeed = 0.5;
-        //_trackball.noZoom = false;
-        //_trackball.noPan = false;
+        _trackball.noZoom = false;
+        _trackball.noPan = false;
        // _trackball.staticMoving = true;
         //_trackball.dynamicDampingFactor = 0.3;
         //_trackball.minDistance = 1;
