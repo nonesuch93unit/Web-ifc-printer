@@ -387,7 +387,7 @@ angular.module('myApp.view1', ['ngRoute'])
 
         var vector = new THREE.Vector3(mouseX, mouseY, 0.5);
 
-        var ray = new THREE.Ray(
+        var ray = new THREE.Raycaster (
             _camera.position,
             vector.sub(_camera.position).normalize());
 
