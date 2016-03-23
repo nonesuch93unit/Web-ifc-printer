@@ -119,7 +119,7 @@ angular.module('myApp.view1', ['ngRoute'])
             _camera.fov = 40;
             _camera.position.x = 0;
             _camera.position.y = 0;
-            _camera.position.z = 30;
+            _camera.position.z = 0;
 
             _scene.add( obj );
             console.log("c'est un OBJ");
@@ -355,8 +355,6 @@ angular.module('myApp.view1', ['ngRoute'])
 
         document.addEventListener('mousewheel', onDocumentMouseWheel, false);
 
-        _renderer.domElement.addEventListener('mousedown', onDocumentMouseDown, false);
-
         var container = document.getElementById("GLDiv");
       }
 
@@ -376,39 +374,6 @@ angular.module('myApp.view1', ['ngRoute'])
         render();
       }
 
-      function onDocumentMouseDown(event) {
-
-        event.preventDefault();
-        console.log("hello, on a cliqué");
-
-        var container = document.getElementById("GLDiv");
-
-        var mouseX = (event.clientX / window.innerWidth) * 2 - 1;
-        var mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
-
-        var vector = new THREE.Vector3(mouseX, mouseY, 0.5);
-
-        var ray = new THREE.Raycaster (
-            _camera.position,
-            vector.sub(_camera.position).normalize());
-
-        var vector = new THREE.Vector3(
-         ((event.clientX - container.offsetLeft) / _scene.WIDTH) * 2 - 1,
-         -((event.clientY - container.offsetTop) / _scene.HEIGHT) * 2 + 1,
-         0.5);
-
-        vector.unproject( _camera);
-
-        var intersects = ray.intersectObjects(_entities);
-
-        if (intersects.length > 0) {
-
-          //SELECTED = intersects[0].object;
-          console.log(intersects[0].object);
-          alert("Intersect: " + intersects.length)
-
-        }
-      }
 
       function animate() {
         requestAnimationFrame(animate);

@@ -26,10 +26,10 @@
       <file leaf-file-name="view1.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Client/app/view1/view1.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36504856">
-              <caret line="381" column="42" selection-start-line="381" selection-start-column="42" selection-end-line="381" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.48058254">
+              <caret line="138" column="23" selection-start-line="138" selection-start-column="23" selection-end-line="138" selection-end-column="23" />
               <folding>
-                <marker date="1458775708114" expanded="true" signature="7169:8145" placeholder="{...}" />
+                <marker date="1458776032681" expanded="true" signature="7168:8144" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -486,7 +486,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-16" y="-16" width="3872" height="2092" extended-state="6" />
+    <frame x="-16" y="-16" width="3872" height="2092" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23060685" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -559,7 +559,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="156" column="41" selection-start-line="156" selection-start-column="41" selection-end-line="156" selection-end-column="41" />
           <folding>
-            <marker date="1458775708114" expanded="true" signature="7169:8145" placeholder="{...}" />
+            <marker date="1458776032681" expanded="true" signature="7168:8144" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -642,7 +642,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="438" column="19" selection-start-line="438" selection-start-column="19" selection-end-line="438" selection-end-column="19" />
           <folding>
-            <marker date="1458775708114" expanded="true" signature="7169:8145" placeholder="{...}" />
+            <marker date="1458776032681" expanded="true" signature="7168:8144" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -937,10 +937,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Client/app/view1/view1.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36504856">
-          <caret line="381" column="42" selection-start-line="381" selection-start-column="42" selection-end-line="381" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.48058254">
+          <caret line="138" column="23" selection-start-line="138" selection-start-column="23" selection-end-line="138" selection-end-column="23" />
           <folding>
-            <marker date="1458775708114" expanded="true" signature="7169:8145" placeholder="{...}" />
+            <marker date="1458776032681" expanded="true" signature="7168:8144" placeholder="{...}" />
           </folding>
         </state>
       </provider>
