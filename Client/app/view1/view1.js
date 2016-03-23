@@ -119,7 +119,7 @@ angular.module('myApp.view1', ['ngRoute'])
             _camera.fov = 40;
             _camera.position.x = 0;
             _camera.position.y = 0;
-            _camera.position.z = 0;
+            _camera.position.z = 30;
 
             _scene.add( obj );
             console.log("c'est un OBJ");
@@ -297,7 +297,7 @@ angular.module('myApp.view1', ['ngRoute'])
         //controls.lookSpeed = 1;
         //controls.rollSpeed = 0;
         //controls.autoForward = false;
-        _camera.position.x = 0;
+        _camera.position.x = -100;
         _camera.position.y = 0;
         _camera.position.z = 50;
 
