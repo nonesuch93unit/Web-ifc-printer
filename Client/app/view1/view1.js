@@ -403,7 +403,7 @@ angular.module('myApp.view1', ['ngRoute'])
         if (intersects.length > 0) {
 
           //SELECTED = intersects[0].object;
-
+          console.log(intersects[0].object);
           alert("Intersect: " + intersects.length)
 
         }
