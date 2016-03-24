@@ -49,6 +49,7 @@ angular.module('myApp.view1', ['ngRoute'])
         evt.dataTransfer.dropEffect = 'copy';
       }
 
+      /*
       function onFileDrop(evt) {
 
 
@@ -126,7 +127,9 @@ angular.module('myApp.view1', ['ngRoute'])
             }
         }
       }
-/*
+
+      */
+      /*
       function handleDragOver(evt) {
         evt.stopPropagation();
         evt.preventDefault();
