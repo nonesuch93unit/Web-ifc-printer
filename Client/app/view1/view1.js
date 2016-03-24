@@ -70,7 +70,7 @@ angular.module('myApp.view1', ['ngRoute'])
 
             var meshEntityList = JSON.parse(event.target.result);
 
-            createScene(meshEntityList);
+            //createScene(meshEntityList);
           };
 
           reader.onerror = function (event) {
@@ -156,7 +156,7 @@ angular.module('myApp.view1', ['ngRoute'])
       }
 
       //for a JSON file
-      function createScene(meshDataList){
+      /*function createScene(meshDataList){
 
         clearScene();
 
@@ -254,7 +254,7 @@ angular.module('myApp.view1', ['ngRoute'])
               -center[1],
               -center[2]));
         }
-      };
+      };*/
 
       function hasWebGL() {
         try {
