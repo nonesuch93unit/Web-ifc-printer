@@ -37,9 +37,9 @@ angular.module('myApp.view1', ['ngRoute'])
       {
 
         // Setup the dnd listeners.
-        var dropZone = document.getElementById('dropzone');
-        dropZone.addEventListener('dragover', onFileDragOver, false);
-        dropZone.addEventListener('drop', onFileDrop, false);
+       // var dropZone = document.getElementById('dropzone');
+        //dropZone.addEventListener('dragover', onFileDragOver, false);
+        //dropZone.addEventListener('drop', onFileDrop, false);
       }
 
       function onFileDragOver(evt) {
