@@ -12,7 +12,7 @@ angular.module('myApp.view1', ['ngRoute'])
 .controller('View1Ctrl',
     ['$scope', '$window','mySocket', function($scope, $window,mySocket) {
       //variable de la scene threejs
-      var _camera, _scene, _renderer, _trackball, _projector;
+      var _camera, _scene, _renderer, _trackball;
 
       //envoie de donnée au serveur
       var sendRequest = function(request){
@@ -126,7 +126,7 @@ angular.module('myApp.view1', ['ngRoute'])
             }
         }
       }
-
+/*
       function handleDragOver(evt) {
         evt.stopPropagation();
         evt.preventDefault();
@@ -153,7 +153,7 @@ angular.module('myApp.view1', ['ngRoute'])
         }
 
         _entities = [];
-      }
+      }*/
 
       //for a JSON file
       /*function createScene(meshDataList){
@@ -271,20 +271,18 @@ angular.module('myApp.view1', ['ngRoute'])
         };
       }
 
-      function initGL(no_scene = true) {
+      function initGL() {
         //no_scene = no_scene || true;
         var animateWithWebGL = hasWebGL();
 
         var container = document.getElementById("GLDiv");
 
-        if(no_scene == true){
-          _scene = new THREE.Scene();
-          if($window.innerWidth<800){
-            var width = $window.innerWidth - 20;
-          }
-          else{
-            var width = $window.innerWidth - rightMenuRatio -20;
-          }
+        _scene = new THREE.Scene();
+        if($window.innerWidth<800){
+          var width = $window.innerWidth - 20;
+        }
+        else{
+          var width = $window.innerWidth - rightMenuRatio -20;
 
 
           var height = $window.innerHeight;
@@ -349,15 +347,15 @@ angular.module('myApp.view1', ['ngRoute'])
         _renderer.setSize(width, height);
         _renderer.setClearColor( 0x000, 0);
 
-        _projector = new THREE.Projector();
+        //_projector = new THREE.Projector();
 
         container.appendChild(_renderer.domElement);
 
-        document.addEventListener('mousewheel', onDocumentMouseWheel, false);
+        //document.addEventListener('mousewheel', onDocumentMouseWheel, false);
 
         var container = document.getElementById("GLDiv");
       }
-
+/*
       function onDocumentMouseWheel(event) {
         _camera.fov -= event.wheelDeltaY * 0.05;
 
@@ -374,7 +372,7 @@ angular.module('myApp.view1', ['ngRoute'])
         render();
       }
 
-
+*/
       function animate() {
         requestAnimationFrame(animate);
         _trackball.update();
@@ -386,9 +384,6 @@ angular.module('myApp.view1', ['ngRoute'])
       }
 
       $window.addEventListener( 'resize', onWindowResize, false );
-
-
-
 
         function onWindowResize(){
 
@@ -404,12 +399,11 @@ angular.module('myApp.view1', ['ngRoute'])
 
           _renderer.setSize( $window.innerWidth  -rightMenuRatio , $window.innerHeight - headerSize);
         }
-
-
       }
 
 
 $scope.menuRightStyle = {'background-color': '#bbf242','width':(rightMenuRatio-20)+'px'};
+
 $scope.layers = [];
 
       $scope.goOBJ = function(fp) {
