@@ -299,7 +299,7 @@ angular.module('myApp.view1', ['ngRoute'])
         //controls.autoForward = false;
         _camera.position.x = 0;
         _camera.position.y = -100;
-        _camera.position.z = 50;
+        _camera.position.z = 30;
 
         _scene.add(_camera);
 
@@ -308,8 +308,8 @@ angular.module('myApp.view1', ['ngRoute'])
         _trackball.zoomSpeed = 1.0;
 	    _trackball.target.z = 150;
         _trackball.panSpeed = 0.5;
-        _trackball.noZoom = true;
-        _trackball.noPan = true;
+        _trackball.noZoom = false;
+        _trackball.noPan = false;
         _trackball.target.set(0, 0, 0);
        // _trackball.staticMoving = true;
         _trackball.dynamicDampingFactor = 0.3;
