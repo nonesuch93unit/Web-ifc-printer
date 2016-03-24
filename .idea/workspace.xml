@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5450f02e-1538-4cc5-8e5c-9d7809992feb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/app/index.html" afterPath="$PROJECT_DIR$/Client/app/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/app/view1/view1.js" afterPath="$PROJECT_DIR$/Client/app/view1/view1.js" />
     </list>
     <ignored path="Projet_2.iws" />
@@ -24,15 +23,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="view1.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="view1.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Client/app/view1/view1.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.03125">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.30097088">
+              <caret line="147" column="3" selection-start-line="147" selection-start-column="3" selection-end-line="147" selection-end-column="3" />
               <folding>
                 <element signature="e#1110#1268#0" expanded="false" />
-                <element signature="e#1301#3255#0" expanded="false" />
-                <marker date="1458778150916" expanded="true" signature="7152:8077" placeholder="{...}" />
+                <marker date="1458778258906" expanded="true" signature="7153:8078" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -80,11 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7201139">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state vertical-scroll-proportion="-2.8557692">
+              <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -161,8 +159,8 @@
         <option value="$PROJECT_DIR$/Client/app/bower_components/three.js/build/three.js" />
         <option value="$PROJECT_DIR$/Client/app/view1/view1.html" />
         <option value="$PROJECT_DIR$/Client/app/bower_components/three.js/examples/js/controls/TrackballControls.js" />
-        <option value="$PROJECT_DIR$/Client/app/view1/view1.js" />
         <option value="$PROJECT_DIR$/Client/app/index.html" />
+        <option value="$PROJECT_DIR$/Client/app/view1/view1.js" />
       </list>
     </option>
   </component>
@@ -521,7 +519,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-16" y="-16" width="3872" height="2092" extended-state="6" />
+    <frame x="-16" y="-16" width="3872" height="2092" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23060685" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -596,8 +594,7 @@
           <caret line="156" column="41" selection-start-line="156" selection-start-column="41" selection-end-line="156" selection-end-column="41" />
           <folding>
             <element signature="e#1110#1268#0" expanded="false" />
-            <element signature="e#1301#3255#0" expanded="false" />
-            <marker date="1458778150916" expanded="true" signature="7152:8077" placeholder="{...}" />
+            <marker date="1458778258906" expanded="true" signature="7153:8078" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -682,8 +679,7 @@
           <caret line="438" column="19" selection-start-line="438" selection-start-column="19" selection-end-line="438" selection-end-column="19" />
           <folding>
             <element signature="e#1110#1268#0" expanded="false" />
-            <element signature="e#1301#3255#0" expanded="false" />
-            <marker date="1458778150916" expanded="true" signature="7152:8077" placeholder="{...}" />
+            <marker date="1458778258906" expanded="true" signature="7153:8078" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -970,18 +966,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Client/app/view1/view1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.03125">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="e#1110#1268#0" expanded="false" />
-            <element signature="e#1301#3255#0" expanded="false" />
-            <marker date="1458778150916" expanded="true" signature="7152:8077" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Client/app/bower_components/three.js/build/three.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.5151515">
@@ -992,9 +976,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Client/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7201139">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state vertical-scroll-proportion="-2.8557692">
+          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/app/view1/view1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30097088">
+          <caret line="147" column="3" selection-start-line="147" selection-start-column="3" selection-end-line="147" selection-end-column="3" />
+          <folding>
+            <element signature="e#1110#1268#0" expanded="false" />
+            <marker date="1458778258906" expanded="true" signature="7153:8078" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -145,7 +145,7 @@ angular.module('myApp.view1', ['ngRoute'])
 
         return bytes[2] | (bytes[1] << 8) | (bytes[0] << 16);
       }
-
+ */
       function clearScene()
       {
         for (var i = 0; i < _entities.length; i++) {
@@ -153,7 +153,7 @@ angular.module('myApp.view1', ['ngRoute'])
         }
 
         _entities = [];
-      }*/
+      }
 
       //for a JSON file
       /*function createScene(meshDataList){
