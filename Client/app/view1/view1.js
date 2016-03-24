@@ -37,9 +37,9 @@ angular.module('myApp.view1', ['ngRoute'])
       {
 
         // Setup the dnd listeners.
-       // var dropZone = document.getElementById('dropzone');
-        //dropZone.addEventListener('dragover', onFileDragOver, false);
-        //dropZone.addEventListener('drop', onFileDrop, false);
+        var dropZone = document.getElementById('dropzone');
+        dropZone.addEventListener('dragover', onFileDragOver, false);
+        dropZone.addEventListener('drop', onFileDrop, false);
       }
 
       function onFileDragOver(evt) {
@@ -49,7 +49,6 @@ angular.module('myApp.view1', ['ngRoute'])
         evt.dataTransfer.dropEffect = 'copy';
       }
 
-      /*
       function onFileDrop(evt) {
 
 
@@ -128,7 +127,7 @@ angular.module('myApp.view1', ['ngRoute'])
         }
       }
 
-      */
+
       /*
       function handleDragOver(evt) {
         evt.stopPropagation();
@@ -501,7 +500,7 @@ $scope.layers = [];
       $scope.filepath = "1";
       $scope.selectFile = function(fp){
         console.log(fp.match(/[A-Z][a-z]+/g[0]));
-        $scope.filepath = fp.split(/(?=[A-Z])/)[0] + "/" + fp.split('.')[0];
+        $scope.filepath = fp.split('.')[-1] + "/" + fp.split('.')[0];
         $scope.goMTL($scope.filepath);
       };
 
